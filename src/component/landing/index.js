@@ -13,6 +13,7 @@ import Blogs from "@/component/landing/blogs";
 import OurPricing from "@/component/landing/our-pricing";
 import ContactUs from "@/component/landing/contactUs";
 import DialogueModel from "@/component/popups";
+import { myPortfolioSchema } from "@/data/schema";
 
 export default function LandingPage() {
   const [openPopup, setOpenPopup] = useState(false);
@@ -25,14 +26,17 @@ export default function LandingPage() {
   return (
     <>
       <Header />
-      <HeroSection />
-      <AboutSection />
-      <Services handleClick={handleClick} />
-      <Digitaltrack />
-      <Projects handleClick={handleClick} />
+      <HeroSection myPortfolioSchema={myPortfolioSchema} />
+      <AboutSection aboutData={myPortfolioSchema?.aboutMe} />
+      <Services
+        handleClick={handleClick}
+        ourServices={myPortfolioSchema?.services}
+      />
+      <Digitaltrack digitalTrack={myPortfolioSchema?.digitalTrack} />
+      <Projects handleClick={handleClick} {...myPortfolioSchema} />
       <Testonomials />
       <Blogs />
-      <OurPricing />
+      <OurPricing {...myPortfolioSchema} />
       <ContactUs />
       <ServiceDialogue />
       {/* <Footer /> */}

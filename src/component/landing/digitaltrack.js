@@ -1,6 +1,6 @@
 import React from "react";
 
-const Digitaltrack = () => {
+const Digitaltrack = ({ digitalTrack }) => {
   return (
     <div className="digital-marque-sec">
       <div className="container">
@@ -9,16 +9,9 @@ const Digitaltrack = () => {
             <div className="track">
               <div className="content">
                 <h1>
-                  <span>I always try to put my best service to my client</span>
-                  <i>.</i>
-                  <span>I always try to put my best service to my client</span>
-                  <i>.</i>
-                  <span>I always try to put my best service to my client</span>
-                  <i>.</i>
-                  <span>I always try to put my best service to my client</span>
-                  <i>.</i>
-                  <span>I always try to put my best service to my client</span>
-                  <i>.</i>
+                  {digitalTrack?.tracks?.map((item, index) => (
+                    <span key={index}>{item}</span>
+                  ))}
                 </h1>
               </div>
             </div>

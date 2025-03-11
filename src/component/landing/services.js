@@ -1,17 +1,17 @@
 import React from "react";
 
-const Services = ({ handleClick }) => {
+const Services = ({ handleClick, ourServices }) => {
   return (
     <div name="service">
       <div className="tp-service-area section-padding">
         <div className="container">
           <div className="tp-section-title">
             <span>Check services</span>
-            <h2>My best services</h2>
+            <h2>{ourServices?.heading}</h2>
           </div>
           <div className="tp-service-wrap">
             <div className="row align-items-center">
-              {[0, 1, 2, 3]?.map((_, index) => (
+              {ourServices?.list?.map((service, index) => (
                 <div
                   key={index}
                   onClick={() => handleClick("service")}
@@ -19,11 +19,8 @@ const Services = ({ handleClick }) => {
                 >
                   <div className="tp-service-item">
                     <i className="fi flaticon-vector"></i>
-                    <h2>Website Design</h2>
-                    <p>
-                      A wonderful serenity has taken possession of my entire
-                      soul, like these sweet mornings.
-                    </p>
+                    <h2>{service.title}</h2>
+                    <p>{service?.description}</p>
                     <button className="read-more">
                       <i className="fi flaticon-right-arrow"></i>
                     </button>

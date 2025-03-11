@@ -1,7 +1,9 @@
 import Image from "next/image";
 import React from "react";
 import Profile from "../../assets/images/profile.webp";
-const HeroSection = () => {
+import Link from "next/link";
+const HeroSection = ({ myPortfolioSchema }) => {
+  const { heroSection, footer } = myPortfolioSchema;
   return (
     <div name="home">
       <section className="tp-hero-section-1">
@@ -10,13 +12,15 @@ const HeroSection = () => {
             <div className="col col-xs-7 col-lg-7">
               <div className="tp-hero-section-text">
                 <div className="tp-hero-title">
-                  <h2>App &amp; Software Developer</h2>
+                  <h2>{heroSection?.title}</h2>
                 </div>
                 <div className="tp-hero-sub">
-                  <p>Robert Miller</p>
+                  <p>{heroSection?.name}</p>
                 </div>
                 <div className="btns">
-                  <a className="theme-btn">Contact Me</a>
+                  <Link href={heroSection?.button?.link} className="theme-btn">
+                    {heroSection?.button?.text}
+                  </Link>
                 </div>
               </div>
             </div>
@@ -25,8 +29,8 @@ const HeroSection = () => {
         <div className="right-vec">
           <div className="right-img">
             <Image
-              alt=""
-              src={Profile}
+              alt={heroSection?.image?.title}
+              src={heroSection?.image?.sourceUrl}
               width="687"
               height="959"
               style={{ color: "transparent" }}
@@ -35,15 +39,13 @@ const HeroSection = () => {
         </div>
         <div className="social-link">
           <ul>
-            <li>
-              <a href="index.html">Facebook</a>
-            </li>
-            <li>
-              <a href="index.html">Twitter</a>
-            </li>
-            <li>
-              <a href="index.html">Instagram</a>
-            </li>
+            {footer?.socialLinks?.slice(0, 3)?.map((item, index) => (
+              <li key={index}>
+                <Link href={item?.url} target="_blank">
+                  {item.platform}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
         <div className="visible-text">

@@ -1,8 +1,7 @@
 import React from "react";
-import Profile from "../../assets/images/profile1.webp";
 import Image from "next/image";
 
-const AboutSection = () => {
+const AboutSection = ({ aboutData }) => {
   return (
     <div name="about">
       <section className="tf-about-section section-padding">
@@ -12,15 +11,15 @@ const AboutSection = () => {
               <div className="col-lg-6 col-md-12 col-12">
                 <div className="tf-about-img">
                   <Image
-                    alt=""
-                    src={Profile}
+                    alt={aboutData?.image?.title}
+                    src={aboutData?.image?.sourceUrl}
                     width="540"
                     height="636"
                     style={{ color: "transparent" }}
                   />
                   <div className="tf-about-img-text">
                     <div className="tf-about-icon">
-                      <h3>8+</h3>
+                      <h3>{aboutData?.experienceYears}</h3>
                       <span>Years Exprience</span>
                     </div>
                   </div>
@@ -28,39 +27,19 @@ const AboutSection = () => {
               </div>
               <div className="col-lg-6 col-md-12 col-12">
                 <div className="tf-about-text">
-                  <small>about Me</small>
-                  <h2>Welcome to Tonu, Best Software Services</h2>
-                  <h5>
-                    I have 8+ years of experiences in Software Development for
-                    give you better services.
-                  </h5>
-                  <p>
-                    A wonderful serenity has taken possession of my entire soul,
-                    like these sweet mornings of spring which I enjoy with my
-                    whole heart. I am alone, and feel the charm of existence in
-                    this spot, which was created for the bliss of souls like
-                    mine. I am so happy, my dear friend, so absorbed in the
-                    exquisite
-                  </p>
+                  <small>{aboutData?.label}</small>
+                  <h2>{aboutData?.heading}</h2>
+                  <h5>{aboutData?.subheading}</h5>
+                  <p>{aboutData?.description}</p>
                   <div className="tf-funfact">
-                    <div className="tf-funfact-item">
-                      <h3>
-                        <span>500</span>+
-                      </h3>
-                      <p>Projects Completed</p>
-                    </div>
-                    <div className="tf-funfact-item">
-                      <h3>
-                        <span>52</span>+
-                      </h3>
-                      <p>Awards Win</p>
-                    </div>
-                    <div className="tf-funfact-item">
-                      <h3>
-                        <span>2</span>M+
-                      </h3>
-                      <p>Happy clients</p>
-                    </div>
+                    {aboutData?.achievements?.map((item) => {
+                      return (
+                        <div className="tf-funfact-item">
+                          <h3>{item?.count}</h3>
+                          <p>{item?.label}</p>
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
               </div>

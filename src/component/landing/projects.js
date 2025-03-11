@@ -1,18 +1,18 @@
 import Image from "next/image";
 import React from "react";
 import Service1 from "../../assets/images/image.webp";
-const Projects = ({ handleClick }) => {
+const Projects = ({ handleClick, portfolio }) => {
   return (
     <div name="project">
       <section className="tp-project-section section-padding">
         <div className="container">
           <div className="tp-section-title">
             <span>Projects</span>
-            <h2>My Latest Project</h2>
+            <h2>{portfolio?.heading}</h2>
           </div>
           <div className="tp-project-wrap">
             <div className="row">
-              {[0, 1, 2]?.map((_, index) => (
+              {portfolio?.projects?.map((project, index) => (
                 <div
                   key={index}
                   onClick={() => {
@@ -23,19 +23,16 @@ const Projects = ({ handleClick }) => {
                   <div className="tp-project-item">
                     <div className="tp-project-img">
                       <Image
-                        alt=""
-                        src={Service1}
+                        alt={project.image.title}
+                        src={project.image.sourceUrl}
                         width="420"
                         height="483"
-                        decoding="async"
-                        data-nimg="1"
-                        loading="lazy"
                         style={{ color: "transparent" }}
                       />
                     </div>
                     <div className="tp-project-content">
-                      <span>Web Design</span>
-                      <h2>Business Website Design</h2>
+                      <span>{project.category}</span>
+                      <h2>{project.title}</h2>
                     </div>
                   </div>
                 </div>
