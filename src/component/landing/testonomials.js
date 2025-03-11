@@ -1,6 +1,53 @@
 import React from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const Testonomials = () => {
+  // Slider settings
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    responsive: [
+      {
+        breakpoint: 768, // Adjust for smaller screens
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+
+  // Testimonial data
+  const testimonials = [
+    {
+      id: 1,
+      text: "“That will need careful attention To begin to identify aspects of students’ own portfolios To identify key portfolio features, varied styles, and organizational schemes.”",
+      author: "Marry Jenefer",
+    },
+    {
+      id: 2,
+      text: "“Varied styles, and organizational schemes; to begin to identify aspects of students’ own portfolios To identify key portfolio features, that will need careful attention.”",
+      author: "Elezabeth Marvel",
+    },
+    {
+      id: 3,
+      text: "“To begin to identify aspects of students’ own portfolios To identify key portfolio features, varied styles, and organizational schemes; that will need careful attention.”",
+      author: "Marry Jenefer",
+    },
+    {
+      id: 4,
+      text: "“To identify key portfolio features, varied styles, and organizational schemes; to begin to identify aspects of students’ own portfolios that will need careful attention.”",
+      author: "Elezabeth Marvel",
+    },
+  ];
+
   return (
     <section className="tp-testimonial-section section-padding">
       <div className="container">
@@ -9,290 +56,18 @@ const Testonomials = () => {
           <h2>What My clients say.</h2>
         </div>
         <div className="tp-testimonial-wrap">
-          <div className="slick-slider slick-initialized" dir="ltr">
-            <div className="slick-list">
-              <div
-                className="slick-track"
-                style={{ width: "366.6666666666667%", left: "-100%" }}
-              >
-                <div
-                  data-index="-3"
-                  tabIndex="-1"
-                  className="slick-slide slick-cloned"
-                  aria-hidden="true"
-                  style={{ width: "9.090909090909092%" }}
-                >
-                  <div>
-                    <div
-                      className="tp-testimonial-item"
-                      tabIndex="-1"
-                      style={{ width: "100%", display: "inline-block" }}
-                    >
-                      <div className="tp-testimonial-text">
-                        <p>
-                          “That will need careful attention To begin to identify
-                          aspects of students’ own portfolios To identify key
-                          portfolio features, varied styles, and organizational
-                          schemes.”
-                        </p>
-                        <span>Marry Jenefer</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  data-index="-2"
-                  tabIndex="-1"
-                  className="slick-slide slick-cloned"
-                  aria-hidden="true"
-                  style={{ width: "9.090909090909092%" }}
-                >
-                  <div>
-                    <div
-                      className="tp-testimonial-item"
-                      tabIndex="-1"
-                      style={{ width: "100%", display: "inline-block" }}
-                    >
-                      <div className="tp-testimonial-text">
-                        <p>
-                          “Varied styles, and organizational schemes; to begin
-                          to identify aspects of students’ own portfolios To
-                          identify key portfolio features, that will need
-                          careful attention.”
-                        </p>
-                        <span>Elezabeth Marvel</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  data-index="-1"
-                  tabIndex="-1"
-                  className="slick-slide slick-cloned"
-                  aria-hidden="true"
-                  style={{ width: "9.090909090909092%" }}
-                >
-                  <div>
-                    <div
-                      className="tp-testimonial-item"
-                      tabIndex="-1"
-                      style={{ width: "100%", display: "inline-block" }}
-                    >
-                      <div className="tp-testimonial-text">
-                        <p>
-                          “To begin to identify aspects of students’ own
-                          portfolios To identify key portfolio features, varied
-                          styles, and organizational schemes; that will need
-                          careful attention.”
-                        </p>
-                        <span>Marry Jenefer</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  data-index="0"
-                  className="slick-slide slick-active slick-current"
-                  tabIndex="-1"
-                  aria-hidden="false"
-                  style={{ outline: "none", width: "9.090909090909092%" }}
-                >
-                  <div>
-                    <div
-                      className="tp-testimonial-item"
-                      tabIndex="-1"
-                      style={{ width: "100%", display: "inline-block" }}
-                    >
-                      <div className="tp-testimonial-text">
-                        <p>
-                          “To identify key portfolio features, varied styles,
-                          and organizational schemes; to begin to identify
-                          aspects of students’ own portfolios that will need
-                          careful attention.”
-                        </p>
-                        <span>Elezabeth Marvel</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  data-index="1"
-                  className="slick-slide slick-active"
-                  tabIndex="-1"
-                  aria-hidden="false"
-                  style={{ outline: "none", width: "9.090909090909092%" }}
-                >
-                  <div>
-                    <div
-                      className="tp-testimonial-item"
-                      tabIndex="-1"
-                      style={{ width: "100%", display: "inline-block" }}
-                    >
-                      <div className="tp-testimonial-text">
-                        <p>
-                          “That will need careful attention To begin to identify
-                          aspects of students’ own portfolios To identify key
-                          portfolio features, varied styles, and organizational
-                          schemes.”
-                        </p>
-                        <span>Marry Jenefer</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  data-index="2"
-                  className="slick-slide slick-active"
-                  tabIndex="-1"
-                  aria-hidden="false"
-                  style={{ outline: "none", width: "9.090909090909092%" }}
-                >
-                  <div>
-                    <div
-                      className="tp-testimonial-item"
-                      tabIndex="-1"
-                      style={{ width: "100%", display: "inline-block" }}
-                    >
-                      <div className="tp-testimonial-text">
-                        <p>
-                          “Varied styles, and organizational schemes; to begin
-                          to identify aspects of students’ own portfolios To
-                          identify key portfolio features, that will need
-                          careful attention.”
-                        </p>
-                        <span>Elezabeth Marvel</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  data-index="3"
-                  className="slick-slide"
-                  tabIndex="-1"
-                  aria-hidden="true"
-                  style={{ outline: "none", width: "9.090909090909092%" }}
-                >
-                  <div>
-                    <div
-                      className="tp-testimonial-item"
-                      tabIndex="-1"
-                      style={{ width: "100%", display: "inline-block" }}
-                    >
-                      <div className="tp-testimonial-text">
-                        <p>
-                          “To begin to identify aspects of students’ own
-                          portfolios To identify key portfolio features, varied
-                          styles, and organizational schemes; that will need
-                          careful attention.”
-                        </p>
-                        <span>Marry Jenefer</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  data-index="4"
-                  tabIndex="-1"
-                  className="slick-slide slick-cloned"
-                  aria-hidden="true"
-                  style={{ width: "9.090909090909092%" }}
-                >
-                  <div>
-                    <div
-                      className="tp-testimonial-item"
-                      tabIndex="-1"
-                      style={{ width: "100%", display: "inline-block" }}
-                    >
-                      <div className="tp-testimonial-text">
-                        <p>
-                          “To identify key portfolio features, varied styles,
-                          and organizational schemes; to begin to identify
-                          aspects of students’ own portfolios that will need
-                          careful attention.”
-                        </p>
-                        <span>Elezabeth Marvel</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  data-index="5"
-                  tabIndex="-1"
-                  className="slick-slide slick-cloned"
-                  aria-hidden="true"
-                  style={{ width: "9.090909090909092%" }}
-                >
-                  <div>
-                    <div
-                      className="tp-testimonial-item"
-                      tabIndex="-1"
-                      style={{ width: "100%", display: "inline-block" }}
-                    >
-                      <div className="tp-testimonial-text">
-                        <p>
-                          “That will need careful attention To begin to identify
-                          aspects of students’ own portfolios To identify key
-                          portfolio features, varied styles, and organizational
-                          schemes.”
-                        </p>
-                        <span>Marry Jenefer</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  data-index="6"
-                  tabIndex="-1"
-                  className="slick-slide slick-cloned"
-                  aria-hidden="true"
-                  style={{ width: "9.090909090909092%" }}
-                >
-                  <div>
-                    <div
-                      className="tp-testimonial-item"
-                      tabIndex="-1"
-                      style={{ width: "100%", display: "inline-block" }}
-                    >
-                      <div className="tp-testimonial-text">
-                        <p>
-                          “Varied styles, and organizational schemes; to begin
-                          to identify aspects of students’ own portfolios To
-                          identify key portfolio features, that will need
-                          careful attention.”
-                        </p>
-                        <span>Elezabeth Marvel</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  data-index="7"
-                  tabIndex="-1"
-                  className="slick-slide slick-cloned"
-                  aria-hidden="true"
-                  style={{ width: "9.090909090909092%" }}
-                >
-                  <div>
-                    <div
-                      className="tp-testimonial-item"
-                      tabIndex="-1"
-                      style={{ width: "100%", display: "inline-block" }}
-                    >
-                      <div className="tp-testimonial-text">
-                        <p>
-                          “To begin to identify aspects of students’ own
-                          portfolios To identify key portfolio features, varied
-                          styles, and organizational schemes; that will need
-                          careful attention.”
-                        </p>
-                        <span>Marry Jenefer</span>
-                      </div>
-                    </div>
+          <Slider {...settings}>
+            {testimonials.map((testimonial) => (
+              <div key={testimonial.id}>
+                <div className="tp-testimonial-item">
+                  <div className="tp-testimonial-text">
+                    <p>{testimonial.text}</p>
+                    <span>{testimonial.author}</span>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
+            ))}
+          </Slider>
         </div>
       </div>
       <div className="visible-rotate-text">

@@ -1,3 +1,88 @@
+/* Define the keyframes for zoom-in animation */
+@keyframes zoomIn {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Define the keyframes for zoom-out animation */
+@keyframes zoomOut {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+/* Apply the animation to the search container */
+.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #19181D;
+  padding: 30px;
+  border-radius: 5px;
+  position: absolute;
+  right: 2%;
+  width: 23rem !important;
+  margin-top: 10px;
+  transform-origin: top right; /* Adjust the transform origin if needed */
+  animation: zoomIn 0.3s ease-out; /* Apply zoom-in animation */
+}
+
+/* When the container is hidden, apply the zoom-out animation */
+.search-container.close-pop-up {
+  animation: zoomOut 0.3s ease-in forwards; /* Apply zoom-out animation */
+}
+
+/* Rest of your existing styles */
+.search-input {
+  background-color: #19181D;
+  color: white;
+  border: none;
+  padding: 12px 20px 12px 20px;
+  border-radius: 1px;
+  outline: none;
+  width: 290px;
+  border: 1px solid rgb(106, 102, 102);
+}
+
+.search-input:focus {
+  border: 1px solid orange;
+}
+
+.search-icon {
+  color: white;
+  cursor: pointer;
+  position: absolute;
+  right: 40px;
+  font-size: 18px;
+  pointer-events: auto;
+}
+
+.close-pop-up {
+  display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 /* all section css */
 output {
   display: inline-block;
