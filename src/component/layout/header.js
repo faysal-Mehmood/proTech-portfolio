@@ -1,6 +1,14 @@
 import React from "react";
+import { useState } from "react";
 
 const Header = () => {
+  const [isSearchVisible, setIsSearchVisible] = useState(false);
+
+  // Function to toggle the search container visibility
+  const toggleSearch = () => {
+    setIsSearchVisible(!isSearchVisible);
+  };
+
   return (
     <div className="fixed-navbar">
       <header id="header">
@@ -110,9 +118,17 @@ const Header = () => {
                   <div className="header-right" id="home">
                     <div className="header-search-form-wrapper">
                       <div className="cart-search-contact">
-                        <button className="search-toggle-btn">
-                          <i className="ti-search ti-search"></i>
+                        <button
+                          className="search-toggle-btn"
+                          onClick={toggleSearch}
+                        >
+                          {isSearchVisible ? (
+                            <i className="ti-close"></i> // Show close icon when visible
+                          ) : (
+                            <i className="ti-search ti-search"></i> // Show search icon when hidden
+                          )}
                         </button>
+
                         <div className="header-search-form">
                           <form>
                             <div>
@@ -134,6 +150,21 @@ const Header = () => {
               </div>
             </div>
           </nav>
+        </div>
+
+        <div
+          className={` ${
+            isSearchVisible
+              ? "search-container zoom-in"
+              : "close-pop-up zoom-out"
+          }`}
+        >
+          <input
+            type="text"
+            className="search-input"
+            placeholder="Search here..."
+          />
+          <i className="ti-search ti-search search-icon pop-up-icon"></i>
         </div>
       </header>
     </div>
