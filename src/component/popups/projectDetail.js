@@ -1,7 +1,42 @@
 import React from "react";
 import Image from "next/image";
+
+import { useEffect, useState } from "react";
+import dynamic from "next/dynamic";
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 import ProjectGreenLand from "../../assets/images/blog.webp";
+
+const Slider = dynamic(() => import("react-slick"), { ssr: false });
+
 const ProjectDetail = () => {
+  const [isMounted, setIsMounted] = useState(false);
+
+  // Ensure the component is mounted before rendering the slider
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  // Slider settings
+  const settings = {
+    dots: true, // Show dots for navigation
+    infinite: true, // Infinite looping
+    speed: 500, // Transition speed
+    slidesToShow: 1, // Number of slides to show at once
+    slidesToScroll: 1, // Number of slides to scroll
+    autoplay: true, // Auto-play the slider
+    autoplaySpeed: 2000, // Auto-play speed in milliseconds
+    arrows: false, // Show navigation arrows
+  };
+
+  const images = [
+    { id: 1, src: ProjectGreenLand, alt: "Project Image 1" },
+    { id: 2, src: ProjectGreenLand, alt: "Project Image 2" },
+    { id: 3, src: ProjectGreenLand, alt: "Project Image 3" },
+  ];
+
   return (
     <>
       <button className="modal-close">
@@ -61,15 +96,25 @@ const ProjectDetail = () => {
                       </div>
                     </div>
                   </div>
+
                   <div className="tp-project-single-main-img">
-                    <Image
-                      src={ProjectGreenLand}
-                      alt="Project Image"
-                      width={900}
-                      height={520}
-                      layout="responsive"
-                      loading="lazy"
-                    />
+                    {/* Render the slider only if the component is mounted */}
+                    {isMounted && (
+                      <Slider {...settings}>
+                        {images.map((image) => (
+                          <div key={image.id}>
+                            <Image
+                              src={image.src}
+                              alt={image.alt}
+                              width={900}
+                              height={520}
+                              layout="responsive"
+                              loading="lazy"
+                            />
+                          </div>
+                        ))}
+                      </Slider>
+                    )}
                   </div>
                 </div>
 
