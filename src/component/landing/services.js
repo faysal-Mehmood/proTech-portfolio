@@ -14,13 +14,13 @@ const Services = ({ handleClick, ourServices }) => {
               {ourServices?.list?.map((service, index) => (
                 <div
                   key={index}
-                  onClick={() => handleClick("service")}
+                  onClick={() => handleClick(service)}
                   className="col col-lg-3 col-md-6 col-12"
                 >
                   <div className="tp-service-item">
                     <i className="fi flaticon-vector"></i>
                     <h2>{service.title}</h2>
-                    <p>{service?.description}</p>
+                    <p>{service?.description.slice(0, 80)}</p>
                     <button className="read-more">
                       <i className="fi flaticon-right-arrow"></i>
                     </button>

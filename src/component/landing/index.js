@@ -17,11 +17,13 @@ import { myPortfolioSchema } from "@/data/schema";
 
 export default function LandingPage() {
   const [openPopup, setOpenPopup] = useState(false);
+  const [dataObj, setdataObj] = useState({});
   const handleClose = () => {
-    setOpenPopup("");
+    setOpenPopup(false);
   };
-  const handleClick = (value) => {
-    setOpenPopup(value);
+  const handleClick = (data) => {
+    setOpenPopup(true);
+    setdataObj(data);
   };
   return (
     <>
@@ -40,7 +42,11 @@ export default function LandingPage() {
       <ContactUs />
       <ServiceDialogue />
       {/* <Footer /> */}
-      <DialogueModel handleClose={handleClose} openPopup={openPopup} />
+      <DialogueModel
+        handleClose={handleClose}
+        openPopup={openPopup}
+        dataObj={dataObj}
+      />
       <div className="col-lg-12">
         <div className="header-menu">
           <ul className="smothscroll">

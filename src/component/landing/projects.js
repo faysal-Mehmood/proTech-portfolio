@@ -1,6 +1,5 @@
 import Image from "next/image";
 import React from "react";
-import Service1 from "../../assets/images/image.webp";
 const Projects = ({ handleClick, portfolio }) => {
   return (
     <div name="project">
@@ -16,15 +15,15 @@ const Projects = ({ handleClick, portfolio }) => {
                 <div
                   key={index}
                   onClick={() => {
-                    handleClick("project");
+                    handleClick(project);
                   }}
                   className="col col-xl-4 col-lg-6 col-sm-12 col-12"
                 >
                   <div className="tp-project-item">
                     <div className="tp-project-img">
                       <Image
-                        alt={project.image.title}
-                        src={project.image.sourceUrl}
+                        alt={project.feature_image.title}
+                        src={project.feature_image.sourceUrl}
                         width="420"
                         height="483"
                         style={{ color: "transparent" }}

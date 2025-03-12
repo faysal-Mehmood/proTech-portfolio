@@ -1,6 +1,7 @@
 import profileImageUrl from "../assets/images/profile.webp";
 import profile1ImageUrl from "../assets/images/profile1.webp";
-import projectThumbnail from "../assets/images/image.webp";
+import projectThumbnail from "../assets/images/projects/image.webp";
+import serviceThumbnail from "../assets/images/services/blog.webp";
 export const myPortfolioSchema = {
   heroSection: {
     title: "App & Software Developer",
@@ -30,24 +31,103 @@ export const myPortfolioSchema = {
     heading: "My Best Services",
     list: [
       {
+        dataId: "pro_tech_service",
         title: "Website Design",
-        description: "Creating beautiful and functional websites.",
+        category: "website",
+        description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Metus dis posuere amet tincidunt commodo, velit. Ipsum, hac nibh fermentum nisi, platea condimentum cursus velit dui. Massa volutpat odio facilisis purus sit elementum. Non, sed velit dictum quam. Id risus pharetra est, at rhoncus, nec ullamcorper tincidunt. Id aliquet duis sollicitudin diam, elit sit. Et nisi in libero facilisis sed est. Elit curabitur amet risus bibendum. Posuere et eget orci, tempor enim.
+Hac nibh fermentum nisi, platea condimentum cursus velit dui. Massa volutpat odio facilisis purus sit elementum. Non, sed velit dictum quam. Id risus pharetra est, at rhoncus, nec ullamcorper tincidunt. Id aliquet duis sollicitudin diam, elit sit.`,
         icon: "",
+        featured_image: serviceThumbnail,
+        image_gallery: [serviceThumbnail, serviceThumbnail],
+        our_capabilties: {
+          text: "Massa volutpat odio facilisis purus sit elementum. Non, sed velit dictum quam. Id risus pharetra est, at rhoncus, nec ullamcorper tincidunt. Id aliquet duis sollicitudin diam",
+          list: [
+            "Non saed velit dictum quam risus pharetra esta.",
+            "Non saed velit dictum quam risus pharetra esta.",
+            "Non saed velit dictum quam risus pharetra esta.",
+          ],
+        },
+        our_approach:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat suspendisse aenean tellus augue morbi risus. Sit morbi vitae morbi sed urna sed purus. Orci facilisi eros sed pellentesque. Risus id sed tortor sed scelerisque. Vestibulum elit elementum, magna id viverra non, velit. Pretium, eros, porttitor fusce auctor vitae id. Phasellus scelerisque nibh eleifend vel enim mauris purus. Rutrum vel sem adipiscing nisi vulputate molestie scelerisque molestie ultrices. Eu, fusce vulputate diam interdum morbi ac a.",
+        work_process: [
+          "lroem ipsum",
+          "lorem, ipsum",
+          "Non saed velit dictum quam risus pharetra esta.",
+        ],
       },
       {
-        title: "Mobile App Design",
-        description: "Designing intuitive mobile applications.",
+        dataId: "pro_tech_service",
+        title: "Website Design",
+        category: "website",
+        description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Metus dis posuere amet tincidunt commodo, velit. Ipsum, hac nibh fermentum nisi, platea condimentum cursus velit dui. Massa volutpat odio facilisis purus sit elementum. Non, sed velit dictum quam. Id risus pharetra est, at rhoncus, nec ullamcorper tincidunt. Id aliquet duis sollicitudin diam, elit sit. Et nisi in libero facilisis sed est. Elit curabitur amet risus bibendum. Posuere et eget orci, tempor enim.
+Hac nibh fermentum nisi, platea condimentum cursus velit dui. Massa volutpat odio facilisis purus sit elementum. Non, sed velit dictum quam. Id risus pharetra est, at rhoncus, nec ullamcorper tincidunt. Id aliquet duis sollicitudin diam, elit sit.`,
         icon: "",
+        featured_image: serviceThumbnail,
+        image_gallery: [serviceThumbnail, serviceThumbnail],
+        our_capabilties: {
+          text: "Massa volutpat odio facilisis purus sit elementum. Non, sed velit dictum quam. Id risus pharetra est, at rhoncus, nec ullamcorper tincidunt. Id aliquet duis sollicitudin diam",
+          list: [
+            "Non saed velit dictum quam risus pharetra esta.",
+            "Non saed velit dictum quam risus pharetra esta.",
+            "Non saed velit dictum quam risus pharetra esta.",
+          ],
+        },
+        our_approach:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat suspendisse aenean tellus augue morbi risus. Sit morbi vitae morbi sed urna sed purus. Orci facilisi eros sed pellentesque. Risus id sed tortor sed scelerisque. Vestibulum elit elementum, magna id viverra non, velit. Pretium, eros, porttitor fusce auctor vitae id. Phasellus scelerisque nibh eleifend vel enim mauris purus. Rutrum vel sem adipiscing nisi vulputate molestie scelerisque molestie ultrices. Eu, fusce vulputate diam interdum morbi ac a.",
+        work_process: [
+          "lroem ipsum",
+          "lorem, ipsum",
+          "Non saed velit dictum quam risus pharetra esta.",
+        ],
       },
       {
-        title: "Brand Identity",
-        description: "Crafting strong brand identities.",
+        dataId: "pro_tech_service",
+        title: "Website Design",
+        category: "website",
+        description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Metus dis posuere amet tincidunt commodo, velit. Ipsum, hac nibh fermentum nisi, platea condimentum cursus velit dui. Massa volutpat odio facilisis purus sit elementum. Non, sed velit dictum quam. Id risus pharetra est, at rhoncus, nec ullamcorper tincidunt. Id aliquet duis sollicitudin diam, elit sit. Et nisi in libero facilisis sed est. Elit curabitur amet risus bibendum. Posuere et eget orci, tempor enim.
+Hac nibh fermentum nisi, platea condimentum cursus velit dui. Massa volutpat odio facilisis purus sit elementum. Non, sed velit dictum quam. Id risus pharetra est, at rhoncus, nec ullamcorper tincidunt. Id aliquet duis sollicitudin diam, elit sit.`,
         icon: "",
+        featured_image: serviceThumbnail,
+        image_gallery: [serviceThumbnail, serviceThumbnail],
+        our_capabilties: {
+          text: "Massa volutpat odio facilisis purus sit elementum. Non, sed velit dictum quam. Id risus pharetra est, at rhoncus, nec ullamcorper tincidunt. Id aliquet duis sollicitudin diam",
+          list: [
+            "Non saed velit dictum quam risus pharetra esta.",
+            "Non saed velit dictum quam risus pharetra esta.",
+            "Non saed velit dictum quam risus pharetra esta.",
+          ],
+        },
+        our_approach:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat suspendisse aenean tellus augue morbi risus. Sit morbi vitae morbi sed urna sed purus. Orci facilisi eros sed pellentesque. Risus id sed tortor sed scelerisque. Vestibulum elit elementum, magna id viverra non, velit. Pretium, eros, porttitor fusce auctor vitae id. Phasellus scelerisque nibh eleifend vel enim mauris purus. Rutrum vel sem adipiscing nisi vulputate molestie scelerisque molestie ultrices. Eu, fusce vulputate diam interdum morbi ac a.",
+        work_process: [
+          "lroem ipsum",
+          "lorem, ipsum",
+          "Non saed velit dictum quam risus pharetra esta.",
+        ],
       },
       {
-        title: "Market Analysis",
-        description: "Providing insightful market research.",
+        dataId: "pro_tech_service",
+        title: "Website Design",
+        description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Metus dis posuere amet tincidunt commodo, velit. Ipsum, hac nibh fermentum nisi, platea condimentum cursus velit dui. Massa volutpat odio facilisis purus sit elementum. Non, sed velit dictum quam. Id risus pharetra est, at rhoncus, nec ullamcorper tincidunt. Id aliquet duis sollicitudin diam, elit sit. Et nisi in libero facilisis sed est. Elit curabitur amet risus bibendum. Posuere et eget orci, tempor enim.
+Hac nibh fermentum nisi, platea condimentum cursus velit dui. Massa volutpat odio facilisis purus sit elementum. Non, sed velit dictum quam. Id risus pharetra est, at rhoncus, nec ullamcorper tincidunt. Id aliquet duis sollicitudin diam, elit sit.`,
         icon: "",
+        featured_image: serviceThumbnail,
+        image_gallery: [serviceThumbnail, serviceThumbnail],
+        our_capabilties: {
+          text: "Massa volutpat odio facilisis purus sit elementum. Non, sed velit dictum quam. Id risus pharetra est, at rhoncus, nec ullamcorper tincidunt. Id aliquet duis sollicitudin diam",
+          list: [
+            "Non saed velit dictum quam risus pharetra esta.",
+            "Non saed velit dictum quam risus pharetra esta.",
+            "Non saed velit dictum quam risus pharetra esta.",
+          ],
+        },
+        our_approach:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat suspendisse aenean tellus augue morbi risus. Sit morbi vitae morbi sed urna sed purus. Orci facilisi eros sed pellentesque. Risus id sed tortor sed scelerisque. Vestibulum elit elementum, magna id viverra non, velit. Pretium, eros, porttitor fusce auctor vitae id. Phasellus scelerisque nibh eleifend vel enim mauris purus. Rutrum vel sem adipiscing nisi vulputate molestie scelerisque molestie ultrices. Eu, fusce vulputate diam interdum morbi ac a.",
+        work_process: [
+          "lroem ipsum",
+          "lorem, ipsum",
+          "Non saed velit dictum quam risus pharetra esta.",
+        ],
       },
     ],
   },
@@ -62,24 +142,128 @@ export const myPortfolioSchema = {
     heading: "My Latest Projects",
     projects: [
       {
-        title: "Business Website Design",
+        dataId: "pro_tech_project",
         category: "Web Design",
-        image: { sourceUrl: projectThumbnail, title: "" },
+        title: "Business Website Design",
+        description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Metus dis posuere amet tincidunt commodo, velit. Ipsum, hac nibh fermentum nisi, platea condimentum cursus velit dui. Massa volutpat odio facilisis purus sit elementum. Non.
+Hac nibh fermentum nisi, platea condimentum cursus velit dui. Massa volutpat odio facilisis purus sit elementum. Non, sed velit dictum quam. Id risus pharetra est, at rhoncus, nec ullamcorper tincidunt. Id aliquet duis sollicitudin diam`,
+        metaFeatures: {
+          location: "London",
+          client: "wpOceans",
+          consult: "Harry Johnson",
+          project_type: "React",
+          duration: "6 Month",
+          completion_date: "15 Apr 2025",
+          preview: "www.google.com",
+        },
+        project_gallery: [projectThumbnail, projectThumbnail, projectThumbnail],
+        our_Strategies: {
+          text: "Massa volutpat odio facilisis purus sit elementum. Non, sed velit dictum quam. Id risus pharetra est, at rhoncus, nec ullamcorper tincidunt. Id aliquet duis sollicitudin diam.",
+          list: [
+            "Non saed velit dictum quam risus pharetra esta.",
+            "Non saed velit dictum quam risus pharetra esta.",
+            "Non saed velit dictum quam risus pharetra esta.",
+          ],
+        },
+        client_feedback:
+          "Amazing looking theme and instantly turns your application into a great looking one. Really shows that pro_ fessionals built this theme up. Very happy with the way the theme looks .",
+        client_name: "Robert Mikey",
+        our_approach:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat suspendisse aenean tellus augue morbi risus. Sit morbi vitae morbi sed urna sed purus. Orci facilisi eros sed pellentesque. Risus id sed tortor sed scelerisque. Vestibulum elit elementum, magna id viverra non, velit. Pretium, eros, porttitor fusce auctor vitae id. Phasellus scelerisque nibh eleifend vel enim mauris purus. Rutrum vel sem adipiscing nisi vulputate molestie scelerisque molestie ultrices. Eu, fusce vulputate diam interdum morbi ac a.",
+        feature_image: { sourceUrl: projectThumbnail, title: "" },
       },
       {
-        title: "E-commerce App",
-        category: "App Development",
-        image: { sourceUrl: projectThumbnail, title: "" },
+        dataId: "pro_tech_project",
+        category: "Web Design",
+        title: "Business Website Design",
+        description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Metus dis posuere amet tincidunt commodo, velit. Ipsum, hac nibh fermentum nisi, platea condimentum cursus velit dui. Massa volutpat odio facilisis purus sit elementum. Non.
+Hac nibh fermentum nisi, platea condimentum cursus velit dui. Massa volutpat odio facilisis purus sit elementum. Non, sed velit dictum quam. Id risus pharetra est, at rhoncus, nec ullamcorper tincidunt. Id aliquet duis sollicitudin diam`,
+        metaFeatures: {
+          location: "London",
+          client: "wpOceans",
+          consult: "Harry Johnson",
+          project_type: "React",
+          duration: "6 Month",
+          completion_date: "15 Apr 2025",
+          preview: "www.google.com",
+        },
+        project_gallery: [projectThumbnail, projectThumbnail, projectThumbnail],
+        our_Strategies: {
+          text: "Massa volutpat odio facilisis purus sit elementum. Non, sed velit dictum quam. Id risus pharetra est, at rhoncus, nec ullamcorper tincidunt. Id aliquet duis sollicitudin diam.",
+          list: [
+            "Non saed velit dictum quam risus pharetra esta.",
+            "Non saed velit dictum quam risus pharetra esta.",
+            "Non saed velit dictum quam risus pharetra esta.",
+          ],
+        },
+        client_feedback:
+          "Amazing looking theme and instantly turns your application into a great looking one. Really shows that pro_ fessionals built this theme up. Very happy with the way the theme looks .",
+        client_name: "Robert Mikey",
+        our_approach:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat suspendisse aenean tellus augue morbi risus. Sit morbi vitae morbi sed urna sed purus. Orci facilisi eros sed pellentesque. Risus id sed tortor sed scelerisque. Vestibulum elit elementum, magna id viverra non, velit. Pretium, eros, porttitor fusce auctor vitae id. Phasellus scelerisque nibh eleifend vel enim mauris purus. Rutrum vel sem adipiscing nisi vulputate molestie scelerisque molestie ultrices. Eu, fusce vulputate diam interdum morbi ac a.",
+        feature_image: { sourceUrl: projectThumbnail, title: "" },
       },
       {
-        title: "Marketing Dashboard",
-        category: "UI/UX Design",
-        image: { sourceUrl: projectThumbnail, title: "" },
+        dataId: "pro_tech_project",
+        category: "Web Design",
+        title: "Business Website Design",
+        description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Metus dis posuere amet tincidunt commodo, velit. Ipsum, hac nibh fermentum nisi, platea condimentum cursus velit dui. Massa volutpat odio facilisis purus sit elementum. Non.
+Hac nibh fermentum nisi, platea condimentum cursus velit dui. Massa volutpat odio facilisis purus sit elementum. Non, sed velit dictum quam. Id risus pharetra est, at rhoncus, nec ullamcorper tincidunt. Id aliquet duis sollicitudin diam`,
+        metaFeatures: {
+          location: "London",
+          client: "wpOceans",
+          consult: "Harry Johnson",
+          project_type: "React",
+          duration: "6 Month",
+          completion_date: "15 Apr 2025",
+          preview: "www.google.com",
+        },
+        project_gallery: [projectThumbnail, projectThumbnail, projectThumbnail],
+        our_Strategies: {
+          text: "Massa volutpat odio facilisis purus sit elementum. Non, sed velit dictum quam. Id risus pharetra est, at rhoncus, nec ullamcorper tincidunt. Id aliquet duis sollicitudin diam.",
+          list: [
+            "Non saed velit dictum quam risus pharetra esta.",
+            "Non saed velit dictum quam risus pharetra esta.",
+            "Non saed velit dictum quam risus pharetra esta.",
+          ],
+        },
+        client_feedback:
+          "Amazing looking theme and instantly turns your application into a great looking one. Really shows that pro_ fessionals built this theme up. Very happy with the way the theme looks .",
+        client_name: "Robert Mikey",
+        our_approach:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat suspendisse aenean tellus augue morbi risus. Sit morbi vitae morbi sed urna sed purus. Orci facilisi eros sed pellentesque. Risus id sed tortor sed scelerisque. Vestibulum elit elementum, magna id viverra non, velit. Pretium, eros, porttitor fusce auctor vitae id. Phasellus scelerisque nibh eleifend vel enim mauris purus. Rutrum vel sem adipiscing nisi vulputate molestie scelerisque molestie ultrices. Eu, fusce vulputate diam interdum morbi ac a.",
+        feature_image: { sourceUrl: projectThumbnail, title: "" },
       },
       {
-        title: "Startup Branding",
-        category: "Branding",
-        image: { sourceUrl: projectThumbnail, title: "" },
+        dataId: "pro_tech_project",
+        category: "Web Design",
+        title: "Business Website Design",
+        description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Metus dis posuere amet tincidunt commodo, velit. Ipsum, hac nibh fermentum nisi, platea condimentum cursus velit dui. Massa volutpat odio facilisis purus sit elementum. Non.
+Hac nibh fermentum nisi, platea condimentum cursus velit dui. Massa volutpat odio facilisis purus sit elementum. Non, sed velit dictum quam. Id risus pharetra est, at rhoncus, nec ullamcorper tincidunt. Id aliquet duis sollicitudin diam`,
+        metaFeatures: {
+          location: "London",
+          client: "wpOceans",
+          consult: "Harry Johnson",
+          project_type: "React",
+          duration: "6 Month",
+          completion_date: "15 Apr 2025",
+          preview: "www.google.com",
+        },
+        project_gallery: [projectThumbnail, projectThumbnail, projectThumbnail],
+        our_Strategies: {
+          text: "Massa volutpat odio facilisis purus sit elementum. Non, sed velit dictum quam. Id risus pharetra est, at rhoncus, nec ullamcorper tincidunt. Id aliquet duis sollicitudin diam.",
+          list: [
+            "Non saed velit dictum quam risus pharetra esta.",
+            "Non saed velit dictum quam risus pharetra esta.",
+            "Non saed velit dictum quam risus pharetra esta.",
+          ],
+        },
+        client_feedback:
+          "Amazing looking theme and instantly turns your application into a great looking one. Really shows that pro_ fessionals built this theme up. Very happy with the way the theme looks .",
+        client_name: "Robert Mikey",
+        our_approach:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat suspendisse aenean tellus augue morbi risus. Sit morbi vitae morbi sed urna sed purus. Orci facilisi eros sed pellentesque. Risus id sed tortor sed scelerisque. Vestibulum elit elementum, magna id viverra non, velit. Pretium, eros, porttitor fusce auctor vitae id. Phasellus scelerisque nibh eleifend vel enim mauris purus. Rutrum vel sem adipiscing nisi vulputate molestie scelerisque molestie ultrices. Eu, fusce vulputate diam interdum morbi ac a.",
+        feature_image: { sourceUrl: projectThumbnail, title: "" },
       },
     ],
   },

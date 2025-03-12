@@ -27,7 +27,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #19181D;
+  background-color: #19181d;
   padding: 30px;
   border-radius: 5px;
   position: absolute;
@@ -45,7 +45,7 @@
 
 /* Rest of your existing styles */
 .search-input {
-  background-color: #19181D;
+  background-color: #19181d;
   color: white;
   border: none;
   padding: 12px 20px 12px 20px;
@@ -71,17 +71,6 @@
 .close-pop-up {
   display: none;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 /* all section css */
 output {
@@ -18297,8 +18286,7 @@ ul.smothscroll a:hover {
 }
 .tp-project-single-area {
   background: #101010;
-  padding-top: 20px;
-  padding-bottom: 40px;
+  padding: 40px 20px;
 }
 .tp-project-single-area .tp-project-single-wrap .tp-project-single-title h3 {
   font-weight: 500;
