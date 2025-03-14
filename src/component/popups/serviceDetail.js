@@ -1,7 +1,6 @@
 import Image from "next/image";
-import ProjectGreenLand from "../../assets/images/blog.webp";
-
-const ServiceDetail = () => {
+const ServiceDetail = ({ dataObj }) => {
+  console.log("dataObj", dataObj);
   return (
     <div className="tp-service-single-area">
       <div className="container">
@@ -11,59 +10,39 @@ const ServiceDetail = () => {
               <div className="tp-service-single-item">
                 <div className="tp-service-single-main-img">
                   <Image
-                    src="/_next/static/media/img-1.389bd36f.jpg"
-                    alt="Website Design"
+                    src={dataObj?.featured_image?.sourceUrl}
+                    alt={dataObj?.featured_image?.title}
                     width={900}
                     height={520}
                     layout="responsive"
-                    loading="lazy"
                   />
                 </div>
                 <div className="tp-service-single-title">
-                  <h3>Website Design</h3>
+                  <h3>{dataObj?.title}</h3>
                 </div>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Metus
-                  dis posuere amet tincidunt commodo, velit. Ipsum, hac nibh
-                  fermentum nisi, platea condimentum cursus velit dui. Massa
-                  volutpat odio facilisis purus sit elementum. Non, sed velit
-                  dictum quam. Id risus pharetra est, at rhoncus, nec
-                  ullamcorper tincidunt. Id aliquet duis sollicitudin diam, elit
-                  sit. Et nisi in libero facilisis sed est. Elit curabitur amet
-                  risus bibendum. Posuere et eget orci, tempor enim.
-                </p>
-                <p>
+                <p>{dataObj?.description}</p>
+                {/* <p>
                   Hac nibh fermentum nisi, platea condimentum cursus velit dui.
                   Massa volutpat odio facilisis purus sit elementum. Non, sed
                   velit dictum quam. Id risus pharetra est, at rhoncus, nec
                   ullamcorper tincidunt. Id aliquet duis sollicitudin diam, elit
                   sit.
-                </p>
+                </p> */}
                 <div className="row mt-4">
-                  <div className="col-md-6 col-sm-6 col-12">
-                    <div className="tp-p-details-img">
-                      <Image
-                        src="/_next/static/media/img-2.779d8d6c.jpg"
-                        alt="Gallery Image 1"
-                        width={435}
-                        height={280}
-                        layout="responsive"
-                        loading="lazy"
-                      />
+                  {dataObj?.image_gallery?.map((imageItem, index) => (
+                    <div key={index} className="col-md-6 col-sm-6 col-12">
+                      <div className="tp-p-details-img">
+                        <Image
+                          src={imageItem}
+                          alt="Gallery Image 1"
+                          width={435}
+                          height={280}
+                          layout="responsive"
+                          loading="lazy"
+                        />
+                      </div>
                     </div>
-                  </div>
-                  <div className="col-md-6 col-sm-6 col-12">
-                    <div className="tp-p-details-img">
-                      <Image
-                        src="/_next/static/media/img-3.5b8c87e9.jpg"
-                        alt="Gallery Image 2"
-                        width={435}
-                        height={280}
-                        layout="responsive"
-                        loading="lazy"
-                      />
-                    </div>
-                  </div>
+                  ))}
                 </div>
               </div>
 
@@ -71,20 +50,11 @@ const ServiceDetail = () => {
                 <div className="tp-service-single-title">
                   <h3>Our Capabilities</h3>
                 </div>
-                <p>
-                  Massa volutpat odio facilisis purus sit elementum. Non, sed
-                  velit dictum quam. Id risus pharetra est, at rhoncus, nec
-                  ullamcorper tincidunt. Id aliquet duis sollicitudin diam.
-                </p>
+                <p>{dataObj?.our_capabilties?.text}</p>
                 <ul>
-                  <li>Non saed velit dictum quam risus pharetra esta.</li>
-                  <li>
-                    Id risus pharetra est, at rhoncus, nec ullamcorper
-                    tincidunt.
-                  </li>
-                  <li>Hac nibh fermentum nisi, platea condimentum cursus.</li>
-                  <li>Massa volutpat odio facilisis purus sit elementum.</li>
-                  <li>Elit curabitur amet risus bibendum.</li>
+                  {dataObj?.our_capabilties?.list?.map((item, index) => (
+                    <li key={index}>{item}</li>
+                  ))}
                 </ul>
               </div>
 
@@ -92,17 +62,7 @@ const ServiceDetail = () => {
                 <div className="tp-service-single-title">
                   <h3>Our approach</h3>
                 </div>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Consequat suspendisse aenean tellus augue morbi risus. Sit
-                  morbi vitae morbi sed urna sed purus. Orci facilisi eros sed
-                  pellentesque. Risus id sed tortor sed scelerisque. Vestibulum
-                  elit elementum, magna id viverra non, velit. Pretium, eros,
-                  porttitor fusce auctor vitae id. Phasellus scelerisque nibh
-                  eleifend vel enim mauris purus. Rutrum vel sem adipiscing nisi
-                  vulputate molestie scelerisque molestie ultrices. Eu, fusce
-                  vulputate diam interdum morbi ac a.
-                </p>
+                <p>{dataObj?.our_approach}</p>
               </div>
 
               <div className="tp-service-single-item list-widget">
@@ -110,13 +70,9 @@ const ServiceDetail = () => {
                   <h3>Our Work Process</h3>
                 </div>
                 <ul>
-                  <li>Non saed velit dictum quam risus pharetra esta.</li>
-                  <li>
-                    Id risus pharetra est, at rhoncus, nec ullamcorper
-                    tincidunt.
-                  </li>
-                  <li>Hac nibh fermentum nisi, platea condimentum cursus.</li>
-                  <li>Massa volutpat odio facilisis purus sit elementum.</li>
+                  {dataObj?.work_process?.map((item, index) => (
+                    <li key={index}>{item}</li>
+                  ))}
                 </ul>
               </div>
 

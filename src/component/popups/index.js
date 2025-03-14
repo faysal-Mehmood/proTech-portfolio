@@ -13,8 +13,12 @@ export default function DialogueModel(props) {
       <button className="modal-close" onClick={handleClose}>
         <i className="fa fa-close"></i>
       </button>
-      {dataObj?.dataId === "pro_tech_service" && <ServiceDetail />}
-      {dataObj?.dataId === "pro_tech_project" && <ProjectDetail />}
+      {dataObj?.dataId === "pro_tech_service" && (
+        <ServiceDetail dataObj={dataObj} />
+      )}
+      {dataObj?.dataId === "pro_tech_project" && (
+        <ProjectDetail dataObj={dataObj} />
+      )}
     </Dialog>
   );
 }

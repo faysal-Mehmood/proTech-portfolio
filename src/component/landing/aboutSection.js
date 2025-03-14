@@ -32,9 +32,9 @@ const AboutSection = ({ aboutData }) => {
                   <h5>{aboutData?.subheading}</h5>
                   <p>{aboutData?.description}</p>
                   <div className="tf-funfact">
-                    {aboutData?.achievements?.map((item) => {
+                    {aboutData?.achievements?.map((item, index) => {
                       return (
-                        <div className="tf-funfact-item">
+                        <div key={index} className="tf-funfact-item">
                           <h3>{item?.count}</h3>
                           <p>{item?.label}</p>
                         </div>
