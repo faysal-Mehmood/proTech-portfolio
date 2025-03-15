@@ -156,7 +156,11 @@ Hac nibh fermentum nisi, platea condimentum cursus velit dui. Massa volutpat odi
           completion_date: "15 Apr 2025",
           preview: "www.google.com",
         },
-        project_gallery: [projectThumbnail, projectThumbnail, projectThumbnail],
+        project_gallery: [
+          { sourcelUrl: projectThumbnail, title: "Image 1" },
+          { sourceUrl: projectThumbnail, title: "Image 2" },
+          { sourceUrl: projectThumbnail, title: "Image 3" },
+        ],
         our_Strategies: {
           text: "Massa volutpat odio facilisis purus sit elementum. Non, sed velit dictum quam. Id risus pharetra est, at rhoncus, nec ullamcorper tincidunt. Id aliquet duis sollicitudin diam.",
           list: [
@@ -187,7 +191,11 @@ Hac nibh fermentum nisi, platea condimentum cursus velit dui. Massa volutpat odi
           completion_date: "15 Apr 2025",
           preview: "www.google.com",
         },
-        project_gallery: [projectThumbnail, projectThumbnail, projectThumbnail],
+        project_gallery: [
+          { sourcelUrl: projectThumbnail, title: "Image 1" },
+          { sourceUrl: projectThumbnail, title: "Image 2" },
+          { sourceUrl: projectThumbnail, title: "Image 3" },
+        ],
         our_Strategies: {
           text: "Massa volutpat odio facilisis purus sit elementum. Non, sed velit dictum quam. Id risus pharetra est, at rhoncus, nec ullamcorper tincidunt. Id aliquet duis sollicitudin diam.",
           list: [
@@ -218,7 +226,11 @@ Hac nibh fermentum nisi, platea condimentum cursus velit dui. Massa volutpat odi
           completion_date: "15 Apr 2025",
           preview: "www.google.com",
         },
-        project_gallery: [projectThumbnail, projectThumbnail, projectThumbnail],
+        project_gallery: [
+          { sourcelUrl: projectThumbnail, title: "Image 1" },
+          { sourceUrl: projectThumbnail, title: "Image 2" },
+          { sourceUrl: projectThumbnail, title: "Image 3" },
+        ],
         our_Strategies: {
           text: "Massa volutpat odio facilisis purus sit elementum. Non, sed velit dictum quam. Id risus pharetra est, at rhoncus, nec ullamcorper tincidunt. Id aliquet duis sollicitudin diam.",
           list: [
@@ -249,7 +261,11 @@ Hac nibh fermentum nisi, platea condimentum cursus velit dui. Massa volutpat odi
           completion_date: "15 Apr 2025",
           preview: "www.google.com",
         },
-        project_gallery: [projectThumbnail, projectThumbnail, projectThumbnail],
+        project_gallery: [
+          { sourcelUrl: projectThumbnail, title: "Image 1" },
+          { sourceUrl: projectThumbnail, title: "Image 2" },
+          { sourceUrl: projectThumbnail, title: "Image 3" },
+        ],
         our_Strategies: {
           text: "Massa volutpat odio facilisis purus sit elementum. Non, sed velit dictum quam. Id risus pharetra est, at rhoncus, nec ullamcorper tincidunt. Id aliquet duis sollicitudin diam.",
           list: [
@@ -346,6 +362,7 @@ Hac nibh fermentum nisi, platea condimentum cursus velit dui. Massa volutpat odi
       },
     ], // Placeholder for pricing plans
   },
+  contactUs: {},
   footer: {
     socialLinks: [
       { platform: "Facebook", url: "#", icon: "" },
