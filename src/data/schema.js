@@ -4,8 +4,10 @@ import projectThumbnail from "../assets/images/projects/image.webp";
 import serviceThumbnail from "../assets/images/services/blog.webp";
 export const myPortfolioSchema = {
   heroSection: {
+    scrolId: "#heroSection",
     title: "App & Software Developer",
     name: "Robert Miller",
+
     button: {
       text: "Contact Me",
       link: "#contact-us",

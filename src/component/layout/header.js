@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { Link } from "react-scroll";
 
 const Header = () => {
   const [isSearchVisible, setIsSearchVisible] = useState(false);
@@ -94,22 +95,34 @@ const Header = () => {
                     </button>
                     <ul className="nav navbar-nav mb-2 mb-lg-0">
                       <li>
-                        <a>Home</a>
+                        <Link to="home" smooth={true} duration={500}>
+                          Home
+                        </Link>
                       </li>
                       <li>
-                        <a>About</a>
+                        <Link to="about" smooth={true} duration={500}>
+                          About
+                        </Link>
                       </li>
                       <li>
-                        <a>Service</a>
+                        <Link to="service" smooth={true} duration={500}>
+                          Service
+                        </Link>
                       </li>
                       <li>
-                        <a>Portfolio</a>
+                        <Link to="portfolio" smooth={true} duration={500}>
+                          Portfolio
+                        </Link>
                       </li>
                       <li>
-                        <a>Blog</a>
+                        <Link to="blog" smooth={true} duration={500}>
+                          Blog
+                        </Link>
                       </li>
                       <li>
-                        <a>Contact</a>
+                        <Link to="contact" smooth={true} duration={1000}>
+                          Contact
+                        </Link>
                       </li>
                     </ul>
                   </div>

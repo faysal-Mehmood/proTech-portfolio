@@ -16936,7 +16936,7 @@ ul.smothscroll a:hover {
   }
 }
 .tp-hero-section-1 .social-link {
-  position: absolute;
+  position: fixed;
   left: -90px;
   top: 53%;
   transform: rotate(-90deg);

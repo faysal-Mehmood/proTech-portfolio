@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import SlotCounter from "react-slot-counter";
 
 const AboutSection = ({ aboutData }) => {
   return (
@@ -35,7 +36,15 @@ const AboutSection = ({ aboutData }) => {
                     {aboutData?.achievements?.map((item, index) => {
                       return (
                         <div key={index} className="tf-funfact-item">
-                          <h3>{item?.count}</h3>
+                          <h3>
+                            <SlotCounter
+                              value={item?.count} // The final value to display
+                              duration={5} // Duration of the animation in seconds
+                              startValue={0} // Optional: Starting value
+                              autoAnimationStart={true} // Automatically start the animation
+                              separator="," // Optional: Add a separator (e.g., for thousands)
+                            />
+                          </h3>
                           <p>{item?.label}</p>
                         </div>
                       );

@@ -3,13 +3,13 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const Testonomials = () => {
+const Testonomials = ({ testimonialData }) => {
   // Slider settings
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 2,
+    slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
@@ -25,28 +25,6 @@ const Testonomials = () => {
   };
 
   // Testimonial data
-  const testimonials = [
-    {
-      id: 1,
-      text: "“That will need careful attention To begin to identify aspects of students’ own portfolios To identify key portfolio features, varied styles, and organizational schemes.”",
-      author: "Marry Jenefer",
-    },
-    {
-      id: 2,
-      text: "“Varied styles, and organizational schemes; to begin to identify aspects of students’ own portfolios To identify key portfolio features, that will need careful attention.”",
-      author: "Elezabeth Marvel",
-    },
-    {
-      id: 3,
-      text: "“To begin to identify aspects of students’ own portfolios To identify key portfolio features, varied styles, and organizational schemes; that will need careful attention.”",
-      author: "Marry Jenefer",
-    },
-    {
-      id: 4,
-      text: "“To identify key portfolio features, varied styles, and organizational schemes; to begin to identify aspects of students’ own portfolios that will need careful attention.”",
-      author: "Elezabeth Marvel",
-    },
-  ];
 
   return (
     <section className="tp-testimonial-section section-padding">
@@ -57,12 +35,12 @@ const Testonomials = () => {
         </div>
         <div className="tp-testimonial-wrap">
           <Slider {...settings}>
-            {testimonials.map((testimonial) => (
+            {testimonialData.list.map((testimonial) => (
               <div key={testimonial.id}>
                 <div className="tp-testimonial-item">
                   <div className="tp-testimonial-text">
-                    <p>{testimonial.text}</p>
-                    <span>{testimonial.author}</span>
+                    <p>{testimonial.feedback}</p>
+                    <span>{testimonial.name}</span>
                   </div>
                 </div>
               </div>
