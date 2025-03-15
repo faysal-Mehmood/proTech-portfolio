@@ -1,12 +1,57 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { Link } from "react-scroll";
+import { scroller } from "react-scroll";
 
-const Header = () => {
+const Header = ({ myPortfolioSchema }) => {
   const [isSearchVisible, setIsSearchVisible] = useState(false);
+  const [searchData, setSearchData] = useState("");
 
   // Function to toggle the search container visibility
   const toggleSearch = () => {
     setIsSearchVisible(!isSearchVisible);
+  };
+
+  useEffect(() => {}, [searchData]);
+
+  const inputData = (e) => {
+    setSearchData(e.target.value); // Update state
+  };
+
+  const handleSearch = () => {
+    if (!searchData.trim()) return; // If input is empty, do nothing
+
+    // Convert schema into a flat searchable list
+    const sections = [];
+
+    Object.values(myPortfolioSchema).forEach((section) => {
+      if (section && typeof section === "object") {
+        // Extract scrollId
+        const scrollId = section.scrollId;
+
+        // Flatten all text into one string
+        const sectionContent = JSON.stringify(section).toLowerCase();
+
+        if (scrollId) {
+          sections.push({ scrollId, content: sectionContent });
+        }
+      }
+    });
+
+    // Find first match
+    const foundSection = sections.find((sec) =>
+      sec.content.includes(searchData.toLowerCase())
+    );
+
+    if (foundSection) {
+      console.log("Scrolling to:", foundSection.scrollId);
+      scroller.scrollTo(foundSection.scrollId, {
+        duration: 800,
+        smooth: "easeInOutQuart",
+      });
+    } else {
+      alert("No matching section found!");
+    }
   };
 
   return (
@@ -94,22 +139,34 @@ const Header = () => {
                     </button>
                     <ul className="nav navbar-nav mb-2 mb-lg-0">
                       <li>
-                        <a>Home</a>
+                        <Link to="home" smooth={true} duration={500}>
+                          Home
+                        </Link>
                       </li>
                       <li>
-                        <a>About</a>
+                        <Link to="about" smooth={true} duration={500}>
+                          About
+                        </Link>
                       </li>
                       <li>
-                        <a>Service</a>
+                        <Link to="service" smooth={true} duration={500}>
+                          Service
+                        </Link>
                       </li>
                       <li>
-                        <a>Portfolio</a>
+                        <Link to="portfolio" smooth={true} duration={500}>
+                          Portfolio
+                        </Link>
                       </li>
                       <li>
-                        <a>Blog</a>
+                        <Link to="blog" smooth={true} duration={500}>
+                          Blog
+                        </Link>
                       </li>
                       <li>
-                        <a>Contact</a>
+                        <Link to="contact" smooth={true} duration={1000}>
+                          Contact
+                        </Link>
                       </li>
                     </ul>
                   </div>
@@ -163,8 +220,14 @@ const Header = () => {
             type="text"
             className="search-input"
             placeholder="Search here..."
+            value={searchData}
+            onChange={inputData}
+            onKeyDown={(e) => e.key === "Enter" && handleSearch()}
           />
-          <i className="ti-search ti-search search-icon pop-up-icon"></i>
+          <i
+            className="ti-search ti-search search-icon pop-up-icon"
+            onClick={handleSearch}
+          ></i>
         </div>
       </header>
     </div>

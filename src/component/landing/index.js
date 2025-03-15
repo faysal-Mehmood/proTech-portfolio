@@ -14,6 +14,7 @@ import OurPricing from "@/component/landing/our-pricing";
 import ContactUs from "@/component/landing/contactUs";
 import DialogueModel from "@/component/popups";
 import { myPortfolioSchema } from "@/data/schema";
+import { Link } from "react-scroll";
 
 export default function LandingPage() {
   const [openPopup, setOpenPopup] = useState(false);
@@ -27,7 +28,7 @@ export default function LandingPage() {
   };
   return (
     <>
-      <Header />
+      <Header myPortfolioSchema={myPortfolioSchema} />
       <HeroSection myPortfolioSchema={myPortfolioSchema} />
       <AboutSection aboutData={myPortfolioSchema?.aboutMe} />
       <Services
@@ -36,7 +37,7 @@ export default function LandingPage() {
       />
       <Digitaltrack digitalTrack={myPortfolioSchema?.digitalTrack} />
       <Projects handleClick={handleClick} {...myPortfolioSchema} />
-      <Testonomials />
+      <Testonomials testimonialData={myPortfolioSchema.testimonials} />
       <Blogs />
       <OurPricing {...myPortfolioSchema} />
       <ContactUs />
@@ -51,9 +52,15 @@ export default function LandingPage() {
         <div className="header-menu">
           <ul className="smothscroll">
             <li>
-              <a href="#__next">
+              <Link
+                to="__next"
+                smooth={true}
+                duration={1000}
+                style={{ cursor: "pointer" }}
+              >
+                {" "}
                 <i className="ti-arrow-up"></i>
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

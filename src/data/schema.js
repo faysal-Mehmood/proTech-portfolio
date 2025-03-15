@@ -4,8 +4,10 @@ import projectThumbnail from "../assets/images/projects/image.webp";
 import serviceThumbnail from "../assets/images/services/blog.webp";
 export const myPortfolioSchema = {
   heroSection: {
+    scrollId: "hero",
     title: "App & Software Developer",
     name: "Robert Miller",
+
     button: {
       text: "Contact Me",
       link: "#contact-us",
@@ -13,6 +15,7 @@ export const myPortfolioSchema = {
     image: { title: "", sourceUrl: profileImageUrl },
   },
   aboutMe: {
+    scrollId: "about",
     label: "About Me",
     heading: "Welcome to Tonu, Best Software Services",
     subheading:
@@ -28,6 +31,7 @@ export const myPortfolioSchema = {
     ],
   },
   services: {
+    scrollId: "service",
     heading: "My Best Services",
     list: [
       {
@@ -132,6 +136,7 @@ Hac nibh fermentum nisi, platea condimentum cursus velit dui. Massa volutpat odi
     ],
   },
   digitalTrack: {
+    scrollId: "digitalTracker",
     tracks: [
       "I always try to put my best service to my client.",
       "I always try to put my best service to my client.",
@@ -139,6 +144,7 @@ Hac nibh fermentum nisi, platea condimentum cursus velit dui. Massa volutpat odi
     ],
   },
   portfolio: {
+    scrollId: "portfolio",
     heading: "My Latest Projects",
     projects: [
       {
@@ -284,32 +290,38 @@ Hac nibh fermentum nisi, platea condimentum cursus velit dui. Massa volutpat odi
     ],
   },
   testimonials: {
+    scrollId: "testimonials",
     heading: "What My Clients Say",
     list: [
       {
         name: "Elizabeth",
         feedback:
-          "Working with Robert was an amazing experience. Highly recommended!",
+          "Working with Robert was an amazing experience. Highly recommended. Working with Robert was an amazing experience. Highly recommended!",
       },
       {
         name: "John Doe",
-        feedback: "Great attention to detail and top-notch development skills.",
+        feedback:
+          "Great attention to detail and top-notch development skills. Working with Robert was an amazing experience. Highly recommended",
       },
       {
         name: "Sarah Connor",
-        feedback: "Delivered my project ahead of schedule with high quality.",
+        feedback:
+          "Delivered my project ahead of schedule with high quality. Working with Robert was an amazing experience. Highly recommended",
       },
       {
         name: "Michael Smith",
-        feedback: "Excellent communication and problem-solving skills.",
+        feedback:
+          "Excellent communication and problem-solving skills. Working with Robert was an amazing experience. Highly recommended",
       },
     ],
   },
   blog: {
+    scrollId: "blog",
     heading: "Latest Blog Posts",
     posts: [], // Placeholder for blog posts
   },
   pricing: {
+    scrollId: "pricing",
     heading: "My Pricing Plan",
     plans: [
       {
@@ -364,6 +376,7 @@ Hac nibh fermentum nisi, platea condimentum cursus velit dui. Massa volutpat odi
   },
   contactUs: {},
   footer: {
+    scrollId: "footer",
     socialLinks: [
       { platform: "Facebook", url: "#", icon: "" },
       { platform: "Instagram", url: "#", icon: "" },

@@ -5,7 +5,7 @@ import Link from "next/link";
 const HeroSection = ({ myPortfolioSchema }) => {
   const { heroSection, footer } = myPortfolioSchema;
   return (
-    <div name="home">
+    <div name="home" id>
       <section className="tp-hero-section-1">
         <div className="container">
           <div className="row">
