@@ -2,7 +2,7 @@ import React from "react";
 
 const OurPricing = ({ pricing }) => {
   return (
-    <section className="tp-pricing-section section-padding">
+    <section className="tp-pricing-section section-padding" id="pricing">
       <div className="container">
         <div className="tp-section-title">
           <span>Pricing</span>

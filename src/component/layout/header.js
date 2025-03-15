@@ -1,13 +1,57 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-scroll";
+import { scroller } from "react-scroll";
 
-const Header = () => {
+const Header = ({ myPortfolioSchema }) => {
   const [isSearchVisible, setIsSearchVisible] = useState(false);
+  const [searchData, setSearchData] = useState("");
 
   // Function to toggle the search container visibility
   const toggleSearch = () => {
     setIsSearchVisible(!isSearchVisible);
+  };
+
+  useEffect(() => {}, [searchData]);
+
+  const inputData = (e) => {
+    setSearchData(e.target.value); // Update state
+  };
+
+  const handleSearch = () => {
+    if (!searchData.trim()) return; // If input is empty, do nothing
+
+    // Convert schema into a flat searchable list
+    const sections = [];
+
+    Object.values(myPortfolioSchema).forEach((section) => {
+      if (section && typeof section === "object") {
+        // Extract scrollId
+        const scrollId = section.scrollId;
+
+        // Flatten all text into one string
+        const sectionContent = JSON.stringify(section).toLowerCase();
+
+        if (scrollId) {
+          sections.push({ scrollId, content: sectionContent });
+        }
+      }
+    });
+
+    // Find first match
+    const foundSection = sections.find((sec) =>
+      sec.content.includes(searchData.toLowerCase())
+    );
+
+    if (foundSection) {
+      console.log("Scrolling to:", foundSection.scrollId);
+      scroller.scrollTo(foundSection.scrollId, {
+        duration: 800,
+        smooth: "easeInOutQuart",
+      });
+    } else {
+      alert("No matching section found!");
+    }
   };
 
   return (
@@ -176,8 +220,14 @@ const Header = () => {
             type="text"
             className="search-input"
             placeholder="Search here..."
+            value={searchData}
+            onChange={inputData}
+            onKeyDown={(e) => e.key === "Enter" && handleSearch()}
           />
-          <i className="ti-search ti-search search-icon pop-up-icon"></i>
+          <i
+            className="ti-search ti-search search-icon pop-up-icon"
+            onClick={handleSearch}
+          ></i>
         </div>
       </header>
     </div>

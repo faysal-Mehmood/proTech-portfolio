@@ -4,7 +4,7 @@ import projectThumbnail from "../assets/images/projects/image.webp";
 import serviceThumbnail from "../assets/images/services/blog.webp";
 export const myPortfolioSchema = {
   heroSection: {
-    scrolId: "#heroSection",
+    scrollId: "hero",
     title: "App & Software Developer",
     name: "Robert Miller",
 
@@ -15,6 +15,7 @@ export const myPortfolioSchema = {
     image: { title: "", sourceUrl: profileImageUrl },
   },
   aboutMe: {
+    scrollId: "about",
     label: "About Me",
     heading: "Welcome to Tonu, Best Software Services",
     subheading:
@@ -30,6 +31,7 @@ export const myPortfolioSchema = {
     ],
   },
   services: {
+    scrollId: "service",
     heading: "My Best Services",
     list: [
       {
@@ -134,6 +136,7 @@ Hac nibh fermentum nisi, platea condimentum cursus velit dui. Massa volutpat odi
     ],
   },
   digitalTrack: {
+    scrollId: "digitalTracker",
     tracks: [
       "I always try to put my best service to my client.",
       "I always try to put my best service to my client.",
@@ -141,6 +144,7 @@ Hac nibh fermentum nisi, platea condimentum cursus velit dui. Massa volutpat odi
     ],
   },
   portfolio: {
+    scrollId: "portfolio",
     heading: "My Latest Projects",
     projects: [
       {
@@ -270,6 +274,7 @@ Hac nibh fermentum nisi, platea condimentum cursus velit dui. Massa volutpat odi
     ],
   },
   testimonials: {
+    scrollId: "testimonials",
     heading: "What My Clients Say",
     list: [
       {
@@ -292,10 +297,12 @@ Hac nibh fermentum nisi, platea condimentum cursus velit dui. Massa volutpat odi
     ],
   },
   blog: {
+    scrollId: "blog",
     heading: "Latest Blog Posts",
     posts: [], // Placeholder for blog posts
   },
   pricing: {
+    scrollId: "pricing",
     heading: "My Pricing Plan",
     plans: [
       {
@@ -349,6 +356,7 @@ Hac nibh fermentum nisi, platea condimentum cursus velit dui. Massa volutpat odi
     ], // Placeholder for pricing plans
   },
   footer: {
+    scrollId: "footer",
     socialLinks: [
       { platform: "Facebook", url: "#", icon: "" },
       { platform: "Instagram", url: "#", icon: "" },

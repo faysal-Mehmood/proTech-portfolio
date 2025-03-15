@@ -28,7 +28,7 @@ export default function LandingPage() {
   };
   return (
     <>
-      <Header />
+      <Header myPortfolioSchema={myPortfolioSchema} />
       <HeroSection myPortfolioSchema={myPortfolioSchema} />
       <AboutSection aboutData={myPortfolioSchema?.aboutMe} />
       <Services
