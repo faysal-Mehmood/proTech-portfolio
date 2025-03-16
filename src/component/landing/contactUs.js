@@ -3,7 +3,7 @@ import React from "react";
 
 const ContactUs = () => {
   return (
-    <div name="contact">
+    <div name="contact" id="contact">
       <section className="tp-contact-form-area section-padding">
         <div className="container">
           <div className="tp-contact-form-wrap">

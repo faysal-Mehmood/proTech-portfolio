@@ -1,4 +1,4 @@
-/* Define the keyframes for zoom-in animation */
+
 @keyframes zoomIn {
   from {
     transform: scale(0);
@@ -10,7 +10,6 @@
   }
 }
 
-/* Define the keyframes for zoom-out animation */
 @keyframes zoomOut {
   from {
     transform: scale(1);
@@ -22,7 +21,7 @@
   }
 }
 
-/* Apply the animation to the search container */
+
 .search-container {
   display: flex;
   align-items: center;
@@ -34,16 +33,16 @@
   right: 2%;
   width: 23rem !important;
   margin-top: 10px;
-  transform-origin: top right; /* Adjust the transform origin if needed */
-  animation: zoomIn 0.3s ease-out; /* Apply zoom-in animation */
+  transform-origin: top right; 
+  animation: zoomIn 0.3s ease-out; 
 }
 
-/* When the container is hidden, apply the zoom-out animation */
+
 .search-container.close-pop-up {
-  animation: zoomOut 0.3s ease-in forwards; /* Apply zoom-out animation */
+  animation: zoomOut 0.3s ease-in forwards; 
 }
 
-/* Rest of your existing styles */
+
 .search-input {
   background-color: #19181d;
   color: white;
@@ -71,6 +70,13 @@
 .close-pop-up {
   display: none;
 }
+
+
+
+.header-scroll{
+  scroll-behavior: smooth !important;
+}
+
 
 /* all section css */
 output {
@@ -16604,6 +16610,21 @@ ul.smothscroll a:hover {
   overflow-x: auto;
   overflow-y: scroll;
 }
+
+.mymobilemenu{
+  position: fixed;
+  left: 0px;
+  top: 0;
+  z-index: 9999;
+  height: 100vh;
+  width: 250px;
+  transition: all 0.3s ease 0s;
+  box-shadow: 0 10px 40px 0 rgba(50, 50, 50, 0.1);
+  overflow-x: auto;
+  overflow-y: scroll;
+  background: #19181d;
+}
+
 .mobileMenu,
 .responsivemenu .card-body {
   background: #19181d;
@@ -16618,6 +16639,7 @@ ul.smothscroll a:hover {
   top: 0;
   z-index: 999;
   cursor: pointer;
+  
 }
 .showmenu button {
   border: 0;

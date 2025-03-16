@@ -6,10 +6,15 @@ import { scroller } from "react-scroll";
 const Header = ({ myPortfolioSchema }) => {
   const [isSearchVisible, setIsSearchVisible] = useState(false);
   const [searchData, setSearchData] = useState("");
+  const [resMenu, setResMenu] = useState(false);
 
   // Function to toggle the search container visibility
   const toggleSearch = () => {
     setIsSearchVisible(!isSearchVisible);
+  };
+
+  const openResMenu = () => {
+    setResMenu(!resMenu);
   };
 
   useEffect(() => {}, [searchData]);
@@ -50,7 +55,7 @@ const Header = ({ myPortfolioSchema }) => {
         smooth: "easeInOutQuart",
       });
     } else {
-      alert("No matching section found!");
+      console.log("No search found");
     }
   };
 
@@ -64,35 +69,47 @@ const Header = ({ myPortfolioSchema }) => {
                 <div className="col-lg-3 col-md-3 col-3 d-lg-none dl-block">
                   <div className="mobail-menu">
                     <div>
-                      <div className="mobileMenu">
+                      <div className={resMenu ? "mobileMenu" : "mymobilemenu"}>
                         <div className="menu-close">
                           <div className="clox">
-                            <i className="ti-close"></i>
+                            <i className="ti-close" onClick={openResMenu}></i>
                           </div>
                         </div>
                         <ul className="responsivemenu">
                           <ul className="MuiList-root MuiList-padding css-1ontqvh">
-                            <a>Home</a>
+                            <a href="#home" onClick={openResMenu}>
+                              Home
+                            </a>
                           </ul>
 
                           <ul className="MuiList-root MuiList-padding css-1ontqvh">
-                            <a>About</a>
+                            <a href="#about" onClick={openResMenu}>
+                              About
+                            </a>
                           </ul>
 
                           <ul className="MuiList-root MuiList-padding css-1ontqvh">
-                            <a>Service</a>
+                            <a href="#service" onClick={openResMenu}>
+                              Service
+                            </a>
                           </ul>
 
                           <ul className="MuiList-root MuiList-padding css-1ontqvh">
-                            <a>Portfolio</a>
+                            <a href="#projects" onClick={openResMenu}>
+                              Portfolio
+                            </a>
                           </ul>
 
                           <ul className="MuiList-root MuiList-padding css-1ontqvh">
-                            <a>Blog</a>
+                            <a href="#blog" onClick={openResMenu}>
+                              Blog
+                            </a>
                           </ul>
 
                           <ul className="MuiList-root MuiList-padding css-1ontqvh">
-                            <a>Contact</a>
+                            <a href="#contact" onClick={openResMenu}>
+                              Contact
+                            </a>
                           </ul>
                         </ul>
                       </div>
@@ -100,6 +117,7 @@ const Header = ({ myPortfolioSchema }) => {
                         <button
                           type="button"
                           className="navbar-toggler open-btn"
+                          onClick={openResMenu}
                         >
                           <span className="icon-bar first-angle"></span>
                           <span className="icon-bar middle-angle"></span>
@@ -139,34 +157,24 @@ const Header = ({ myPortfolioSchema }) => {
                     </button>
                     <ul className="nav navbar-nav mb-2 mb-lg-0">
                       <li>
-                        <Link to="home" smooth={true} duration={500}>
-                          Home
-                        </Link>
+                        <a href="#home">Home</a>
                       </li>
                       <li>
-                        <Link to="about" smooth={true} duration={500}>
+                        <a href="#about" className="header-scroll">
                           About
-                        </Link>
+                        </a>
                       </li>
                       <li>
-                        <Link to="service" smooth={true} duration={500}>
-                          Service
-                        </Link>
+                        <a href="#service">Service</a>
                       </li>
                       <li>
-                        <Link to="portfolio" smooth={true} duration={500}>
-                          Portfolio
-                        </Link>
+                        <a href="#projects">Portfolio</a>
                       </li>
                       <li>
-                        <Link to="blog" smooth={true} duration={500}>
-                          Blog
-                        </Link>
+                        <a href="#blog">Blog</a>
                       </li>
                       <li>
-                        <Link to="contact" smooth={true} duration={1000}>
-                          Contact
-                        </Link>
+                        <a href="#contact">Contact</a>
                       </li>
                     </ul>
                   </div>
