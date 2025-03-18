@@ -138,7 +138,7 @@ const ProjectDetail = ({ dataObj }) => {
 
               <div className="tp-project-single-item">
                 <div className="tp-project-single-title">
-                  <h3>Our approach</h3>
+                  <h3>Technologies Used</h3>
                 </div>
                 <p>{dataObj?.our_approach}</p>
               </div>
