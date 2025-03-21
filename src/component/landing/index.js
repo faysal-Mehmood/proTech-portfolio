@@ -52,10 +52,6 @@ export default function LandingPage() {
         <div className="header-menu">
           <ul className="smothscroll">
             <li>
-              {/* <a href="#__next">
-               
-              </a> */}
-
               <Link
                 to="__next"
                 smooth={true}

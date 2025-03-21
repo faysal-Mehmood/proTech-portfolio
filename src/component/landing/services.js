@@ -15,7 +15,7 @@ const Services = ({ handleClick, ourServices }) => {
                 <div
                   key={index}
                   onClick={() => handleClick(service)}
-                  className="col col-lg-3 col-md-6 col-12"
+                  className="col col-lg-3 col-md-6 col-12 mb-12"
                 >
                   <div className="tp-service-item">
                     <i className="fi flaticon-vector"></i>
