@@ -21,7 +21,17 @@
   }
 }
 
+/* //for contact page form submission css */
+.success-message {
+  color: green;
+  margin-top: 10px;
+  font-weight: bold;
+}
 
+
+.error{
+  color: red;
+}
 .search-container {
   display: flex;
   align-items: center;
@@ -1530,7 +1540,8 @@ progress {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #212529;
+  /* color: #212529; */
+  color: white;
   background-color: #fff;
   background-clip: padding-box;
   border: 1px solid #ced4da;
@@ -17758,10 +17769,12 @@ ul.smothscroll a:hover {
 }
 .tp-testimonial-section .tp-testimonial-wrap .slick-slide {
   padding: 0 15px;
+ 
 }
 .tp-testimonial-section .tp-testimonial-item {
   padding: 30px 20px;
   background: #101010;
+  height: 298.78px;
 }
 .tp-testimonial-section .tp-testimonial-item .tp-testimonial-text p {
   font-style: italic;
