@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
+import { Formik } from "formik";
 
 import dynamic from "next/dynamic";
 
@@ -278,52 +279,127 @@ const ProjectDetail = ({ dataObj }) => {
                     </p>
                   </div>
                   <div className="tp-contact-form-area">
-                    <form className="contact-validation-active">
-                      <div className="row">
-                        <div className="col col-lg-6 col-md-6 col-12">
-                          <div className="form-field">
-                            <input
-                              className="form-control"
-                              type="text"
-                              name="name"
-                              placeholder="Your Name"
-                            />
+                    <Formik
+                      initialValues={{
+                        name: "",
+                        email: "",
+                        subject: "",
+                        message: "",
+                      }}
+                      validate={(values) => {
+                        const errors = {};
+                        if (!values.name) errors.name = "Name is Required";
+                        if (!values.email) errors.email = "Email is Required";
+                        if (!values.subject)
+                          errors.subject = "Subject is Required";
+                        if (!values.name)
+                          errors.message = "Message is Required";
+                        return errors;
+                      }}
+                      onSubmit={(values, { setSubmitting }) => {
+                        setTimeout(() => {
+                          console.log("values Submitted");
+                          setSubmitting(false);
+                          resetForm();
+                        }, 400);
+                      }}
+                    >
+                      {({
+                        values,
+                        errors,
+                        touched,
+                        handleChange,
+                        handleBlur,
+                        handleSubmit,
+                        isSubmitting,
+                      }) => (
+                        <form
+                          className="contact-validation-active"
+                          onSubmit={handleSubmit}
+                        >
+                          <div className="row">
+                            <div className="col col-lg-6 col-md-6 col-12">
+                              <div className="form-field">
+                                <input
+                                  className="form-control"
+                                  type="text"
+                                  name="name"
+                                  placeholder="Your Name"
+                                  onChange={handleChange}
+                                  onBlur={handleBlur}
+                                  value={values.name}
+                                />
+                                {errors.name && touched.name && (
+                                  <div className="error">{errors.name}</div>
+                                )}
+                              </div>
+                            </div>
+                            <div className="col col-lg-6 col-md-6 col-12">
+                              <div className="form-field">
+                                <input
+                                  className="form-control"
+                                  type="email"
+                                  name="email"
+                                  placeholder="Your Email"
+                                  onChange={handleChange}
+                                  onBlur={handleBlur}
+                                  value={values.email}
+                                />
+                                {errors.email && touched.email && (
+                                  <div className="error">{errors.email}</div>
+                                )}
+                              </div>
+                            </div>
+                            <div className="col col-lg-12 col-12">
+                              <div className="form-field">
+                                <select
+                                  className="form-control"
+                                  name="subject"
+                                  onChange={handleChange}
+                                  onBlur={handleBlur}
+                                  value={values.subject}
+                                >
+                                  <option>Choose a Service</option>
+                                  <option>Web Design</option>
+                                  <option>Web Development</option>
+                                  <option>Marketing</option>
+                                </select>
+                                {errors.subject && touched.subject && (
+                                  <div className="error">{errors.subject}</div>
+                                )}
+                              </div>
+                            </div>
+                            <div className="col fullwidth col-lg-12">
+                              <textarea
+                                className="form-control"
+                                name="message"
+                                placeholder="Message"
+                                onChange={handleChange}
+                                onBlur={handleBlur}
+                                value={values.message}
+                              ></textarea>
+                              {errors.message && touched.message && (
+                                <div className="error">{errors.message}</div>
+                              )}
+                            </div>
                           </div>
-                        </div>
-                        <div className="col col-lg-6 col-md-6 col-12">
-                          <div className="form-field">
-                            <input
-                              className="form-control"
-                              type="email"
-                              name="email"
-                              placeholder="Your Email"
-                            />
+                          <div className="submit-area">
+                            <button
+                              type="submit"
+                              className="theme-btn-s2"
+                              disabled={isSubmitting}
+                            >
+                              Submit Now
+                            </button>
+                            {isSubmitting && (
+                              <div className="success-message">
+                                Form Submitted successfully!
+                              </div>
+                            )}
                           </div>
-                        </div>
-                        <div className="col col-lg-12 col-12">
-                          <div className="form-field">
-                            <select className="form-control" name="subject">
-                              <option>Choose a Service</option>
-                              <option>Web Design</option>
-                              <option>Web Development</option>
-                              <option>Marketing</option>
-                            </select>
-                          </div>
-                        </div>
-                        <div className="col fullwidth col-lg-12">
-                          <textarea
-                            className="form-control"
-                            name="message"
-                            placeholder="Message"
-                          ></textarea>
-                        </div>
-                      </div>
-                      <div className="submit-area">
-                        <button type="submit" className="theme-btn-s2">
-                          Submit Now
-                        </button>
-                      </div>
-                    </form>
+                        </form>
+                      )}
+                    </Formik>
                   </div>
                 </div>
               </div>

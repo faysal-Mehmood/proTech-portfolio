@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import { Formik } from "formik";
-import { useState } from "react";
 
 const ContactUs = () => {
   return (
@@ -35,7 +34,7 @@ const ContactUs = () => {
                   console.log("Form submitted successfully!", values);
 
                   console.log(values);
-                  formik.resetForm();
+                  resetForm();
                   setSubmitting(false);
                   setSubmitting(true);
                 }, 400);
