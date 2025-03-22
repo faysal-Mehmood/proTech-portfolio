@@ -4,7 +4,7 @@ import SlotCounter from "react-slot-counter";
 
 const AboutSection = ({ aboutData }) => {
   return (
-    <div name="about">
+    <div name="about" id="about">
       <section className="tf-about-section section-padding">
         <div className="container">
           <div className="tf-about-wrap">

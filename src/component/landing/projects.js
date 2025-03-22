@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 const Projects = ({ handleClick, portfolio }) => {
   return (
-    <div name="project">
+    <div name="project" id="projects">
       <section className="tp-project-section section-padding">
         <div className="container">
           <div className="tp-section-title">

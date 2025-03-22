@@ -2,7 +2,7 @@ import React from "react";
 
 const Services = ({ handleClick, ourServices }) => {
   return (
-    <div name="service">
+    <div name="service" id="service">
       <div className="tp-service-area section-padding">
         <div className="container">
           <div className="tp-section-title">
