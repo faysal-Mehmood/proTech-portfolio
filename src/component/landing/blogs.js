@@ -1,62 +1,44 @@
 import React from "react";
-import blog1 from "../../assets/images/blog.webp";
 import Image from "next/image";
+import blog1 from "../../assets/images/blog/img-1.jpg";
+
 const Blogs = () => {
   return (
-    <div name="blog">
-      <section className="tp-blog-section section-padding" id="blog">
-        <div className="container">
-          <div className="tp-section-title">
-            <span>Latest Blog</span>
-            <h2>My Latest News</h2>
+    <section className="blog-section section-padding pt-0">
+      <div className="container">
+        <div className="title">
+          <h2 className="poort-text poort-in-right">
+            <span>news & blogs</span>
+          </h2>
+          <div className="poort-text poort-in-right">
+            <h3>See latest articles our agency</h3>
           </div>
-          <div className="tp-blog-items">
-            <div className="row">
-              {[0, 1, 2]?.map((_, index) => (
-                <div key={index} className="col col-lg-4 col-md-6 col-12">
-                  <div className="tp-blog-item">
-                    <div className="tp-blog-img">
-                      <Image
-                        alt=""
-                        src={blog1}
-                        width="600"
-                        height="400"
-                        decoding="async"
-                        data-nimg="1"
-                        loading="lazy"
-                        style={{ color: "transparent" }}
-                      />
-                      <div className="thumb">Designer</div>
-                    </div>
-                    <div className="tp-blog-content">
-                      <ul>
-                        <li>25 Dec, 2023</li>
-                        <li>
-                          By <a href="index.html">Marilou</a>
-                        </li>
-                      </ul>
-                      <h2>Helpful tips for become a successful designer</h2>
-                      <p>
-                        Consectetur adipiscing elit. Purusout phasellus
-                        malesuada lectus.
-                      </p>
-                    </div>
-                  </div>
+        </div>
+        <div className="row">
+          {[1, 2, 3]?.map((item, index) => (
+            <div key={index} className="col-lg-4 col-md-6 col-12 fade_bottom">
+              <div className="blog-card">
+                <div className="image">
+                  <Image fill src={blog1} alt="" />
+                  <Image fill src={blog1} alt="" />
                 </div>
-              ))}
+                <div className="content">
+                  <span>june 28, 2025</span>
+                  <h3>
+                    <a href="blog-single.html">
+                      Nurturing creativity & collaboration
+                    </a>
+                  </h3>
+                  <a href="blog-single.html">
+                    <span className="rolling-text">Read more</span>
+                  </a>
+                </div>
+              </div>
             </div>
-            <div className="sec-title-btn text-center mt-3">
-              <span>
-                <button className="theme-btn">View All Blog</button>
-              </span>
-            </div>
-          </div>
+          ))}
         </div>
-        <div className="visible-rotate-text">
-          <h1>Latest Blog</h1>
-        </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 };
 

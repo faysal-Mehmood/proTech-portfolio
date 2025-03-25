@@ -1,153 +1,68 @@
+import Image from "next/image";
 import React from "react";
-import { useState, useEffect } from "react";
-import { Link } from "react-scroll";
-import { scroller } from "react-scroll";
-
+import preloader from "@/assets/images/preloader.png";
+import logo from "@/assets/images/logo.svg";
+import logo2 from "@/assets/images/logo-2.svg";
+import btnAbout from "../../assets/images/btn-about.png";
 const Header = ({ myPortfolioSchema }) => {
-  const [isSearchVisible, setIsSearchVisible] = useState(false);
-  const [searchData, setSearchData] = useState("");
-  const [resMenu, setResMenu] = useState(false);
-
-  // Function to toggle the search container visibility
-  const toggleSearch = () => {
-    setIsSearchVisible(!isSearchVisible);
-  };
-
-  const openResMenu = () => {
-    setResMenu(!resMenu);
-  };
-
-  useEffect(() => {}, [searchData]);
-
-  const inputData = (e) => {
-    setSearchData(e.target.value); // Update state
-  };
-
-  const handleSearch = () => {
-    if (!searchData.trim()) return; // If input is empty, do nothing
-
-    // Convert schema into a flat searchable list
-    const sections = [];
-
-    Object.values(myPortfolioSchema).forEach((section) => {
-      if (section && typeof section === "object") {
-        // Extract scrollId
-        const scrollId = section.scrollId;
-
-        // Flatten all text into one string
-        const sectionContent = JSON.stringify(section).toLowerCase();
-
-        if (scrollId) {
-          sections.push({ scrollId, content: sectionContent });
-        }
-      }
-    });
-
-    // Find first match
-    const foundSection = sections.find((sec) =>
-      sec.content.includes(searchData.toLowerCase())
-    );
-
-    if (foundSection) {
-      console.log("Scrolling to:", foundSection.scrollId);
-      scroller.scrollTo(foundSection.scrollId, {
-        duration: 800,
-        smooth: "easeInOutQuart",
-      });
-    } else {
-      console.log("No search found");
-    }
-  };
-
   return (
-    <div className="fixed-navbar">
+    <>
+      {/* <div className="preloader">
+        <div className="vertical-centered-box">
+          <div className="content">
+            <div className="loader-circle"></div>
+            <div className="loader-line-mask">
+              <div className="loader-line"></div>
+            </div>
+            <Image fill src={preloader} alt="" />
+          </div>
+        </div>
+      </div> */}
+      {/* cursor */}
+      <div className="cursor"></div>
+      {/* them switch */}
+      <div className="open-color-icon">
+        <button className="switcher-open">
+          <i className="ti-settings" id="open-btn"></i>
+          <i className="ti-close" id="close-btn"></i>
+        </button>
+        <div className="color-bar">
+          <h3>Mode</h3>
+          <div className="color-btn">
+            <button className="dark-btn" data-mode="light" aria-label="active">
+              light
+            </button>
+            <button className="white-btn" data-mode="dark" aria-label="dark">
+              dark
+            </button>
+          </div>
+        </div>
+      </div>
+      {/* nav */}
       <header id="header">
-        <div className="tp-site-header undefined">
+        <div className="wpo-site-header">
           <nav className="navigation navbar navbar-expand-lg navbar-light">
             <div className="container-fluid">
-              <div className="row align-items-center">
-                <div className="col-lg-3 col-md-3 col-3 d-lg-none dl-block">
+              <div className="row g-0 align-items-center">
+                <div className="col-lg-3 col-md-2 col-3 d-lg-none dl-block">
                   <div className="mobail-menu">
-                    <div>
-                      <div className={resMenu ? "mobileMenu" : "mymobilemenu"}>
-                        <div className="menu-close">
-                          <div className="clox">
-                            <i className="ti-close" onClick={openResMenu}></i>
-                          </div>
-                        </div>
-                        <ul className="responsivemenu">
-                          <ul className="MuiList-root MuiList-padding css-1ontqvh">
-                            <a href="#home" onClick={openResMenu}>
-                              Home
-                            </a>
-                          </ul>
-
-                          <ul className="MuiList-root MuiList-padding css-1ontqvh">
-                            <a href="#about" onClick={openResMenu}>
-                              About
-                            </a>
-                          </ul>
-
-                          <ul className="MuiList-root MuiList-padding css-1ontqvh">
-                            <a href="#service" onClick={openResMenu}>
-                              Service
-                            </a>
-                          </ul>
-
-                          <ul className="MuiList-root MuiList-padding css-1ontqvh">
-                            <a href="#projects" onClick={openResMenu}>
-                              Portfolio
-                            </a>
-                          </ul>
-
-                          <ul className="MuiList-root MuiList-padding css-1ontqvh">
-                            <a href="#blog" onClick={openResMenu}>
-                              Blog
-                            </a>
-                          </ul>
-
-                          <ul className="MuiList-root MuiList-padding css-1ontqvh">
-                            <a href="#contact" onClick={openResMenu}>
-                              Contact
-                            </a>
-                          </ul>
-                        </ul>
-                      </div>
-                      <div className="showmenu">
-                        <button
-                          type="button"
-                          className="navbar-toggler open-btn"
-                          onClick={openResMenu}
-                        >
-                          <span className="icon-bar first-angle"></span>
-                          <span className="icon-bar middle-angle"></span>
-                          <span className="icon-bar last-angle"></span>
-                        </button>
-                      </div>
-                    </div>
+                    <button type="button" className="navbar-toggler open-btn">
+                      <span className="sr-only">Toggle navigation</span>
+                      <span className="icon-bar first-angle"></span>
+                      <span className="icon-bar middle-angle"></span>
+                      <span className="icon-bar last-angle"></span>
+                    </button>
                   </div>
                 </div>
-                <div className="col-lg-3 col-md-6 col-6">
+                <div className="col-lg-2 col-md-7 col-6">
                   <div className="navbar-header">
                     <a className="navbar-brand" href="index.html">
-                      <img
-                        alt=""
-                        srcSet="
-                        /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.dd721e26.png&amp;w=96&amp;q=75  1x,
-                        /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.dd721e26.png&amp;w=256&amp;q=75 2x
-                      "
-                        src="_next/image1559?url=%2F_next%2Fstatic%2Fmedia%2Flogo.dd721e26.png&amp;w=256&amp;q=75"
-                        width="68"
-                        height="68"
-                        decoding="async"
-                        data-nimg="1"
-                        loading="lazy"
-                        style={{ color: "transparent" }}
-                      />
+                      <Image fill src={logo} alt="" className="light" />
+                      <Image fill src={logo2} alt="" className="dark" />
                     </a>
                   </div>
                 </div>
-                <div className="col-lg-6 col-md-1 col-1">
+                <div className="col-lg-7 col-md-1 col-1">
                   <div
                     id="navbar"
                     className="collapse navbar-collapse navigation-holder"
@@ -156,59 +71,131 @@ const Header = ({ myPortfolioSchema }) => {
                       <i className="ti-close"></i>
                     </button>
                     <ul className="nav navbar-nav mb-2 mb-lg-0">
-                      <li>
-                        <a href="#home">Home</a>
+                      <li className="menu-item-has-children">
+                        <a href="index.html">Home</a>
                       </li>
-                      <li>
-                        <a href="#about" className="header-scroll">
-                          About
-                        </a>
+                      <li className="menu-item-has-children">
+                        <a href="#">Services </a>
+                        <ul className="sub-menu">
+                          <li>
+                            <a href="service.html">Service</a>
+                          </li>
+                          <li>
+                            <a href="service-single.html">Service Single</a>
+                          </li>
+                        </ul>
                       </li>
-                      <li>
-                        <a href="#service">Service</a>
+                      <li className="menu-item-has-children">
+                        <a href="#">Portfolio </a>
+                        <ul className="sub-menu">
+                          <li>
+                            <a href="project.html">Portfolio</a>
+                          </li>
+                          <li>
+                            <a href="project-single.html">Portfolio Single</a>
+                          </li>
+                        </ul>
                       </li>
-                      <li>
-                        <a href="#projects">Portfolio</a>
+                      <li className="menu-item-has-children">
+                        <a href="#">Blog </a>
+                        <ul className="sub-menu">
+                          <li>
+                            <a href="blog.html">Blog right sidebar</a>
+                          </li>
+                          <li>
+                            <a href="blog-left-sidebar.html">
+                              Blog left sidebar
+                            </a>
+                          </li>
+                          <li>
+                            <a href="blog-fullwidth.html">Blog fullwidth</a>
+                          </li>
+                          <li>
+                            <a href="blog-single.html">Blog details </a>
+                          </li>
+                        </ul>
                       </li>
-                      <li>
-                        <a href="#blog">Blog</a>
+                      <li className="menu-item-has-children">
+                        <a href="#">Pages </a>
+                        <ul className="sub-menu">
+                          <li>
+                            <a href="about.html">about Us</a>
+                          </li>
+                          <li>
+                            <a href="contact.html">Contact Us</a>
+                          </li>
+                          <li>
+                            <a href="404.html">404</a>
+                          </li>
+                        </ul>
                       </li>
-                      <li>
-                        <a href="#contact">Contact</a>
+                      <li className="menu-item-has-children">
+                        <a href="contact.html">Contact</a>
                       </li>
                     </ul>
                   </div>
                 </div>
                 <div className="col-lg-3 col-md-2 col-2">
-                  <div className="header-right" id="home">
-                    <div className="header-search-form-wrapper">
-                      <div className="cart-search-contact">
-                        <button
-                          className="search-toggle-btn"
-                          onClick={toggleSearch}
-                        >
-                          {isSearchVisible ? (
-                            <i className="ti-close"></i> // Show close icon when visible
-                          ) : (
-                            <i className="ti-search ti-search"></i> // Show search icon when hidden
-                          )}
+                  <div className="header-right">
+                    <div className="mini-cart">
+                      <button className="cart-toggle-btn">
+                        <Image fill src={btnAbout} alt="" />
+                      </button>
+                      <div className="mini-cart-content">
+                        <button className="mini-cart-close">
+                          <i className="ti-close"></i>
                         </button>
-
-                        <div className="header-search-form">
-                          <form>
-                            <div>
-                              <input
-                                type="text"
-                                className="form-control"
-                                placeholder="Search here..."
-                              />
-                              <button type="submit">
-                                <i className="fi ti-search"></i>
-                              </button>
+                        <div className="mini-cart-items">
+                          <a href="index.html">
+                            <Image fill src={logo} alt="" />
+                          </a>
+                          <h2>Get in Touch</h2>
+                          <p>
+                            If you are going to use a passage of Lorem Ipsum,
+                            you need to be sure there isn't anything
+                            embarrassing hidden in the middle of text.
+                          </p>
+                          <div className="mini-cart-item">
+                            <div className="icon">
+                              <i className="flaticon-phone-call"></i>
                             </div>
-                          </form>
+                            <div className="contact">
+                              <span>Phone</span>
+                              <h6>
+                                <a href="tel:+991-7636844563">
+                                  +991 - 763 684 4563
+                                </a>
+                              </h6>
+                            </div>
+                          </div>
+                          <div className="mini-cart-item">
+                            <div className="icon">
+                              <i className="flaticon-email"></i>
+                            </div>
+                            <div className="contact">
+                              <span>Email Now</span>
+                              <h6>foxisa@gmail.com</h6>
+                            </div>
+                          </div>
+                          <div className="mini-cart-item">
+                            <div className="icon">
+                              <i className="flaticon-placeholder"></i>
+                            </div>
+                            <div className="contact">
+                              <span>Canada Office</span>
+                              <h6>
+                                Canada City, Office-02, Road-11, House-3B/B,
+                                Section-H
+                              </h6>
+                            </div>
+                          </div>
                         </div>
                       </div>
+                    </div>
+                    <div className="close-form">
+                      <a className="theme-btn" href="contact.html">
+                        let,s talk{" "}
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -216,29 +203,8 @@ const Header = ({ myPortfolioSchema }) => {
             </div>
           </nav>
         </div>
-
-        <div
-          className={` ${
-            isSearchVisible
-              ? "search-container zoom-in"
-              : "close-pop-up zoom-out"
-          }`}
-        >
-          <input
-            type="text"
-            className="search-input"
-            placeholder="Search here..."
-            value={searchData}
-            onChange={inputData}
-            onKeyDown={(e) => e.key === "Enter" && handleSearch()}
-          />
-          <i
-            className="ti-search ti-search search-icon pop-up-icon"
-            onClick={handleSearch}
-          ></i>
-        </div>
       </header>
-    </div>
+    </>
   );
 };
 
