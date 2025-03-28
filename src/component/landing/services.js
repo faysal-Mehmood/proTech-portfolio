@@ -26,63 +26,27 @@ export const Services = ({ handleClick, ourServices }) => {
         </div>
       </div>
       <div className="project-wrapper">
-        <div className="project-card project-item-upp">
-          <div className="image">
-            <Image fill src={Service1} alt="" />
-          </div>
-          <div className="content">
-            <div className="text">
-              <span>Project no:2</span>
-              <h2>
-                <a href="project-single.html">Artificial intelligence</a>
-              </h2>
+        {[1, 2, 3]?.map((item, index) => (
+          <div className="project-card project-item-upp">
+            <div className="image">
+              <Image fill src={Service1} alt="" />
             </div>
-            <a
-              href="project-single.html"
-              className="slingle-page-link btn-wrapper btn-move"
-            >
-              <i className="ti-arrow-right"></i>
-            </a>
-          </div>
-        </div>
-        <div className="project-card project-item-upp">
-          <div className="image">
-            <Image fill src={Service2} alt="" />
-          </div>
-          <div className="content">
-            <div className="text">
-              <span>Project no:2</span>
-              <h2>
-                <a href="project-single.html">Mobile Apps Design</a>
-              </h2>
+            <div className="content">
+              <div className="text">
+                <span>Project no:2</span>
+                <h2>
+                  <a href="project-single.html">Artificial intelligence</a>
+                </h2>
+              </div>
+              <a
+                href="project-single.html"
+                className="slingle-page-link btn-wrapper btn-move"
+              >
+                <i className="ti-arrow-right"></i>
+              </a>
             </div>
-            <a
-              href="project-single.html"
-              className="slingle-page-link btn-wrapper btn-move"
-            >
-              <i className="ti-arrow-right"></i>
-            </a>
           </div>
-        </div>
-        <div className="project-card project-item-upp">
-          <div className="image">
-            <Image fill src={Service3} alt="" />
-          </div>
-          <div className="content">
-            <div className="text">
-              <span>Project no:2</span>
-              <h2>
-                <a href="project-single.html">Branding Design</a>
-              </h2>
-            </div>
-            <a
-              href="project-single.html"
-              className="slingle-page-link btn-wrapper btn-move"
-            >
-              <i className="ti-arrow-right"></i>
-            </a>
-          </div>
-        </div>
+        ))}
       </div>
     </section>
   );

@@ -1,4 +1,6 @@
 import React from "react";
+import Slider from "react-slick";
+
 import stert from "../../assets/images/stert-2.svg";
 import partners1 from "../../assets/images/partners/1.png";
 import partners2 from "../../assets/images/partners/2.png";
@@ -31,41 +33,30 @@ export const MarqueeSection = () => {
 };
 
 export const PartnerSection = () => {
+  var settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    arrows: false,
+  };
   return (
     <section className="partners-section fade_bottom">
       <h2 className="d-none">No Content</h2>
       <div className="container">
         <ul className="partners-slider">
-          <li>
-            <div>
-              <img src={partners1} alt="" />
-            </div>
-          </li>
-          <li>
-            <div>
-              <img src={partners2} alt="" />
-            </div>
-          </li>
-          <li>
-            <div>
-              <img src={partners3} alt="" />
-            </div>
-          </li>
-          <li>
-            <div>
-              <img src={partners4} alt="" />
-            </div>
-          </li>
-          <li>
-            <div>
-              <img src={partners5} alt="" />
-            </div>
-          </li>
-          <li>
-            <div>
-              <img src={partners2} alt="" />
-            </div>
-          </li>
+          <Slider {...settings}>
+            {[partners1, partners2, partners3, partners4, partners5]?.map(
+              (item, index) => (
+                <li key={index}>
+                  <div>
+                    <Image width={182} height={75} src={item} alt="" />
+                  </div>
+                </li>
+              )
+            )}
+          </Slider>
         </ul>
       </div>
     </section>

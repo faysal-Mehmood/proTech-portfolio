@@ -15,17 +15,7 @@ import SkillsAward from "./skillsAward";
 import TextAnimation from "./textAnimation";
 import OurSkills from "./ourSkills";
 import GetInTouch from "@/component/common/getInTouch";
-
 export default function LandingPage() {
-  const [openPopup, setOpenPopup] = useState(false);
-  const [dataObj, setdataObj] = useState({});
-  const handleClose = () => {
-    setOpenPopup(false);
-  };
-  const handleClick = (data) => {
-    setOpenPopup(true);
-    setdataObj(data);
-  };
   return (
     <>
       <Header myPortfolioSchema={myPortfolioSchema} />

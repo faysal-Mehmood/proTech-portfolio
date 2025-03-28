@@ -10,8 +10,17 @@ import serviceImage3 from "../../assets/images/service/3.jpg";
 import serviceIcon1 from "../../assets/images/service/icon-1.svg";
 import serviceIcon2 from "../../assets/images/service/icon-2.svg";
 import serviceIcon3 from "../../assets/images/service/icon-3.svg";
+import Slider from "react-slick";
 
 export const Projects = ({ handleClick, portfolio }) => {
+  var settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    arrows: false,
+  };
   const services = [
     {
       id: 1,
@@ -53,39 +62,44 @@ export const Projects = ({ handleClick, portfolio }) => {
       </div>
 
       <div className="container-fluid g-0">
-        <div className="service-slider owl-carousel">
-          {services.map((service) => (
-            <div key={service.id} className="service-card">
-              <Image
-                className="image"
-                src={service.image}
-                alt={service.title}
-                width={500}
-                height={300}
-                priority
-              />
-              <div className="content">
-                <div className="icon">
-                  <Image
-                    src={service.icon}
-                    alt={`Icon ${service.id}`}
-                    width={50}
-                    height={50}
-                  />
-                </div>
-                <div className="text">
-                  <span>{`0${service.id}`}</span>
-                  <h2>
-                    <Link href="/service-single">{service.title}</Link>
-                  </h2>
-                  <p>Sed ut perspiciatis unde is voluptatem accusant</p>
-                  <Link href="/service-single" className="service-single-link">
-                    <i className="ti-arrow-top-right"></i>
-                  </Link>
+        <div className="service-slider">
+          <Slider {...settings}>
+            {services.map((service, index) => (
+              <div key={index} className="service-card">
+                <Image
+                  className="image"
+                  src={service.image}
+                  alt={service.title}
+                  width={500}
+                  height={300}
+                  priority
+                />
+                <div className="content">
+                  <div className="icon">
+                    <Image
+                      src={service.icon}
+                      alt={`Icon ${service.id}`}
+                      width={50}
+                      height={50}
+                    />
+                  </div>
+                  <div className="text">
+                    <span>{`0${service.id}`}</span>
+                    <h2>
+                      <Link href="/service-single">{service.title}</Link>
+                    </h2>
+                    <p>Sed ut perspiciatis unde is voluptatem accusant</p>
+                    <Link
+                      href="/service-single"
+                      className="service-single-link"
+                    >
+                      <i className="ti-arrow-top-right"></i>
+                    </Link>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </Slider>
         </div>
       </div>
 

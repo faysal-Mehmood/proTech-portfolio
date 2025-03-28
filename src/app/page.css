@@ -1,5 +1,3 @@
-
-
 /*** contact form error handling ***/
 .contact-validation-active .error-handling-messages {
   width: 100% !important;
@@ -4134,7 +4132,7 @@ body.light .wpo-site-header-s2 {
     padding: 12px 40px;
   }
 }
-.work-section .owl-carousel .owl-stage-outer {
+.work-section .slick-slider .slick-list {
   margin-right: -375px;
 }
 @media (max-width: 991px) {

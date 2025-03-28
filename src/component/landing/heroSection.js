@@ -1,11 +1,50 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
-
 import Profile from "../../assets/images/slider/profile.png";
+
+gsap.registerPlugin(ScrollTrigger);
+
 export const HeroSection = ({ myPortfolioSchema }) => {
   const { heroSection, footer } = myPortfolioSchema;
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    if (!containerRef.current) return;
+
+    const elements = containerRef.current.querySelectorAll(".new_img-animet");
+
+    elements.forEach((element) => {
+      let image = element.querySelector("img");
+      console.log("ima", image);
+      if (!image) return;
+
+      let tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: element,
+          start: "top 50%",
+          toggleActions: "play none none none",
+        },
+      });
+
+      tl.set(element, { autoAlpha: 1 });
+      tl.from(element, { duration: 1.5, xPercent: -100, ease: "power2.out" });
+      tl.from(
+        image,
+        {
+          duration: 1.5,
+          xPercent: 100,
+          scale: 1.3,
+          ease: "power2.out",
+        },
+        "-=1.5"
+      );
+    });
+  }, []);
+
   return (
-    <section className="hero-section">
+    <section className="hero-section" ref={containerRef}>
       <div className="container">
         <div className="hero-wrap">
           <h2 className="poort-text poort-in-right">
@@ -36,8 +75,13 @@ export const HeroSection = ({ myPortfolioSchema }) => {
         </div>
       </div>
 
-      <div className="image new_img-animet">
-        <Image fill src={Profile} alt="Profile Image" />
+      <div className="imgage new_img-animet">
+        <Image
+          src={Profile}
+          alt="Profile Image"
+          layout="fill"
+          objectFit="cover"
+        />
       </div>
     </section>
   );
